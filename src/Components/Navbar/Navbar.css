@@ -1,0 +1,113 @@
+/* Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Membagi navbar menjadi 3 kolom */
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
+  z-index: 1; /* Untuk mengatasi komponen lainnya */
+}
+
+.icon-image {
+  width: 40px;
+  height: 50px;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: chocolate;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Menempatkan komponen login di pojok kanan atas */
+}
+
+.login-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.login-link:hover {
+  color: chocolate;
+}
+
+/* Tombol hamburger untuk tampilan layar kecil */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.menu-icon:hover {
+  color: white;
+}
+
+/* Media query untuk tampilan layar kecil */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .login-section {
+    display: none;
+  }
+
+  .active {
+    background-color: green;
+  }
+}

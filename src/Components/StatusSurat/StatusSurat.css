@@ -1,0 +1,25 @@
+/* StatusSurat.css */
+
+.status-surat-section {
+    text-align: center;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 390px;
+}
+
+.status-surat-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.status-surat-table th,
+.status-surat-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.status-surat-table th {
+    background-color: #f2f2f2;
+}

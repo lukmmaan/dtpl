@@ -1,0 +1,41 @@
+/* Contact.css */
+
+.contact-section {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+    margin-top: 70px;
+}
+
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: justify;
+}
+
+.contact-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.contact-map {
+    flex: 1;
+}
+
+.contact-map img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
