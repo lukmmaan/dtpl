@@ -52,7 +52,7 @@ const Login = () => {
     } catch (error) {
       swal({
         title: "Ooopps !",
-        text: error.response.data.message,
+        text: "Gagal Loginn brooooo!",
         icon: "error",
         button: "OK !",
       });

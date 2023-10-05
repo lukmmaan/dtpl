@@ -53,7 +53,7 @@ const Register = () => {
 
       swal({
         title: "Ooopps !",
-        text: error.response.data.message,
+        text: "Gagal",
         icon: "error",
         button: "OK !",
       });

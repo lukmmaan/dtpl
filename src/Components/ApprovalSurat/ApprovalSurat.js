@@ -47,7 +47,7 @@ const ApprovalSurat = ({ user }) => {
     } catch (error) {
       swal({
         title: "Ooopps !",
-        text: error.response.data.message,
+        text: "Gagal !",
         icon: "error",
         button: "OK !",
       });
@@ -82,7 +82,7 @@ const ApprovalSurat = ({ user }) => {
     } catch (error) {
       swal({
         title: "Ooopps !",
-        text: error.response.data.message,
+        text: "Gagal !",
         icon: "error",
         button: "OK !",
       });

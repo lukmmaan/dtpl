@@ -51,7 +51,7 @@ const RequestSurat = () => {
       console.log(err);
       swal({
         title: "Ooopps !",
-        text: err.response.data.message,
+        text: "Gagal",
         icon: "error",
         button: "OK !",
       });
