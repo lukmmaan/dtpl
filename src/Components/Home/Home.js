@@ -8,10 +8,6 @@ import BeritaScreen from "./Berita/BeritaScreen";
 const Home = () => {
   return (
     <>
-      <DestinasiCarousel />
-      <div className="divider"></div> {/* Pembatas */}
-      <BeritaScreen />
-      <div className="divider"></div> {/* Pembatas */}
       <div className="home-container">
         <div className="hero-section">
           <h1 className="hero-title">Selamat datang di Desa Manud Jaya</h1>
@@ -23,6 +19,9 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      <DestinasiCarousel />
+      <div className="divider"></div> {/* Pembatas */}
+      <BeritaScreen />
     </>
   );
 };

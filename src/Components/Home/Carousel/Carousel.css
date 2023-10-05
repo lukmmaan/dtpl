@@ -11,7 +11,7 @@
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-    margin-top: 140px;
+    margin-top: 20px;
     /* Sedikit dikurangi untuk ketinggian yang lebih baik */
     max-width: 90%;
     margin-left: auto;
