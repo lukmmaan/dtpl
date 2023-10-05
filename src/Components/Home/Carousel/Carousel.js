@@ -3,6 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Wisata1, Wisata2, Wisata3 } from "../../../Assets/Image/index";
 import "./Carousel.css"; // Buat file CSS untuk styling tambahan
+import { Link } from "react-router-dom";
 
 const destinasiData = [
   {
@@ -44,7 +45,9 @@ const DestinasiCarousel = () => {
             <div className="destinasi-card-content">
               <h2>{destinasi.nama}</h2>
               <p>{destinasi.deskripsi}</p>
-              <button className="destinasi-button">Lihat Selengkapnya</button>
+              <Link to={`/destinasi`}>
+                <button className="destinasi-button">Lihat Selengkapnya</button>
+              </Link>
             </div>
           </div>
         ))}
