@@ -7,7 +7,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin-top: 250px;
+    margin-top: 200px;
     margin-bottom: 200px;
 }
 
@@ -22,6 +22,8 @@
 /* Form styling */
 .pengaduan-form input,
 .pengaduan-form textarea,
+.pengaduan-form select,
+.pengaduan-form label,
 .pengaduan-form button {
     display: block;
     width: 100%;
@@ -30,6 +32,13 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.pengaduan-form label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #654321;
 }
 
 .pengaduan-form button {
@@ -44,58 +53,4 @@
 .pengaduan-form button:hover {
     background-color: #543c29;
     /* Slightly darker brown on hover */
-}
-
-/* List styling */
-.pengaduan-list h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #654321;
-}
-
-.pengaduan-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.pengaduan-list li {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out;
-}
-
-.pengaduan-list li:hover {
-    transform: scale(1.02);
-    /* Slightly enlarge on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.pengaduan-list li div {
-    margin-bottom: 5px;
-}
-
-.pengaduan-list li strong {
-    font-weight: bold;
-    color: #654321;
-}
-
-/* Button styling */
-.pengaduan-list button {
-    background-color: #dc3545;
-    /* Red color for delete button */
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.pengaduan-list button:hover {
-    background-color: #c82333;
-    /* Slightly darker red on hover */
 }

@@ -1,31 +1,40 @@
 import React, { useState } from "react";
-import "./Pengaduan.css";
+import "./Pengaduan.css"; // Sesuaikan dengan nama file CSS yang Anda gunakan
 
 const Pengaduan = () => {
   const [nama, setNama] = useState("");
   const [alamat, setAlamat] = useState("");
   const [pengaduan, setPengaduan] = useState("");
-  const [pengaduanList, setPengaduanList] = useState([]);
+  const [nomorTelepon, setNomorTelepon] = useState("");
+  const [tanggalKejadian, setTanggalKejadian] = useState("");
+  const [lokasiKejadian, setLokasiKejadian] = useState("");
+  const [prioritas, setPrioritas] = useState("Sedang");
+  const [kategori, setKategori] = useState("Infrastruktur");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (nama && alamat && pengaduan) {
-      const newPengaduan = {
+      // Lakukan sesuatu dengan data pengaduan seperti pengiriman ke server atau penyimpanan lokal
+      // Anda dapat menambahkan logika sesuai kebutuhan Anda di sini
+      console.log("Data Pengaduan:", {
         nama,
         alamat,
         pengaduan,
-      };
-      setPengaduanList([...pengaduanList, newPengaduan]);
+        nomorTelepon,
+        tanggalKejadian,
+        lokasiKejadian,
+        prioritas,
+        kategori,
+      });
       setNama("");
       setAlamat("");
       setPengaduan("");
+      setNomorTelepon("");
+      setTanggalKejadian("");
+      setLokasiKejadian("");
+      setPrioritas("Sedang");
+      setKategori("Infrastruktur");
     }
-  };
-
-  const handleDelete = (index) => {
-    const updatedPengaduanList = [...pengaduanList];
-    updatedPengaduanList.splice(index, 1);
-    setPengaduanList(updatedPengaduanList);
   };
 
   return (
@@ -46,33 +55,47 @@ const Pengaduan = () => {
           onChange={(e) => setAlamat(e.target.value)}
           required
         />
+        <input
+          type="text"
+          placeholder="Nomor Telepon"
+          value={nomorTelepon}
+          onChange={(e) => setNomorTelepon(e.target.value)}
+        />
+        <input
+          type="date"
+          placeholder="Tanggal Kejadian"
+          value={tanggalKejadian}
+          onChange={(e) => setTanggalKejadian(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Lokasi Kejadian"
+          value={lokasiKejadian}
+          onChange={(e) => setLokasiKejadian(e.target.value)}
+        />
         <textarea
           placeholder="Pengaduan"
           value={pengaduan}
           onChange={(e) => setPengaduan(e.target.value)}
           required
         ></textarea>
+        <label>Prioritas Pengaduan</label>
+        <select
+          value={prioritas}
+          onChange={(e) => setPrioritas(e.target.value)}
+        >
+          <option value="Rendah">Rendah</option>
+          <option value="Sedang">Sedang</option>
+          <option value="Tinggi">Tinggi</option>
+        </select>
+        <label>Kategori Pengaduan</label>
+        <select value={kategori} onChange={(e) => setKategori(e.target.value)}>
+          <option value="Infrastruktur">Infrastruktur</option>
+          <option value="Lingkungan">Lingkungan</option>
+          <option value="Sosial">Sosial</option>
+        </select>
         <button type="submit">Kirim Pengaduan</button>
       </form>
-      <div className="pengaduan-list">
-        <h2>Daftar Pengaduan</h2>
-        <ul>
-          {pengaduanList.map((item, index) => (
-            <li key={index}>
-              <div>
-                <strong>Nama:</strong> {item.nama}
-              </div>
-              <div>
-                <strong>Alamat:</strong> {item.alamat}
-              </div>
-              <div>
-                <strong>Pengaduan:</strong> {item.pengaduan}
-              </div>
-              <button onClick={() => handleDelete(index)}>Hapus</button>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };
