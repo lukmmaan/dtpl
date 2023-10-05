@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { News } from "../../../Assets/Image/index";
 import "./BeritaCard.css";
 
@@ -118,11 +120,13 @@ const BeritaScreen = () => {
         {beritaChunks.map((beritaRow, rowIndex) => (
           <div className="berita-row" key={rowIndex}>
             {beritaRow.map((berita) => (
-              <div className="berita-card" key={berita.id}>
-                <img src={News} alt={berita.judul} />
-                <h2>{berita.judul}</h2>
-                <p>{berita.isi}</p>
-              </div>
+              <Link to={`/destinasi`} key={berita.id} className="berita-link">
+                <div className="berita-card" key={berita.id}>
+                  <img src={News} alt={berita.judul} />
+                  <h2>{berita.judul}</h2>
+                  <p>{berita.isi}</p>
+                </div>
+              </Link>
             ))}
           </div>
         ))}

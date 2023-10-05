@@ -59,3 +59,9 @@ h1 {
     color: #333;
     margin-bottom: 20px;
 }
+
+.berita-link {
+    text-decoration: none;
+    color: inherit;
+    /* Mengambil warna default dari teks */
+}
