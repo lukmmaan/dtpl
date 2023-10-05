@@ -16,8 +16,9 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import BlankPage from "../BlankPage/Blankpage";
 import EditProfile from "../EditProfile/EditProfile";
-import Keuangan from "../Keuangan/Keuangan"
+import Keuangan from "../Keuangan/Keuangan";
 import Pengaduan from "../Pengaduan/Pengaduan";
+import Destinasi from "../Destinasi/Destinasi";
 
 const AppRouter = ({ user }) => {
   return (
@@ -28,6 +29,14 @@ const AppRouter = ({ user }) => {
           element={
             <Layout>
               <BlankPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/destinasi"
+          element={
+            <Layout>
+              <Destinasi />
             </Layout>
           }
         />

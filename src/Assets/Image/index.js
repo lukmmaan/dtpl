@@ -4,4 +4,6 @@ export const GoogleMap = require("./GoogleMap.png");
 export const Wisata1 = require("./1.jpeg");
 export const Wisata2 = require("./2.jpeg");
 export const Wisata3 = require("./3.jpeg");
+export const Wisata4 = require("./4.jpeg");
+export const Wisata5 = require("./5.jpeg");
 export const News = require("./news.jpeg");

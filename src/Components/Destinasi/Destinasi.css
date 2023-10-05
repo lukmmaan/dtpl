@@ -1,0 +1,87 @@
+/* Destinasi.css */
+.destinasi {
+    background-color: #f0f0f0;
+    padding: 20px;
+    color: #333;
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+.destinasi-title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.destinasi-content,
+.destinasi-content-reverse {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.destinasi-content:nth-child(odd) .destinasi-left,
+.destinasi-content-reverse:nth-child(even) .destinasi-left {
+    order: 2;
+}
+
+.destinasi-left,
+.destinasi-right {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: left;
+    width: 50%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.destinasi-left img,
+.destinasi-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.destinasi-left img:hover,
+.destinasi-right img:hover {
+    transform: scale(1.1);
+}
+
+.destinasi-left h1,
+.destinasi-right h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.destinasi-left p,
+.destinasi-right p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .destinasi-content,
+    .destinasi-content-reverse {
+        flex-direction: column;
+    }
+
+    .destinasi-left,
+    .destinasi-right {
+        width: 100%;
+        order: 1;
+    }
+}
