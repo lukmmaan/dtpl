@@ -16,6 +16,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import BlankPage from "../BlankPage/Blankpage";
 import EditProfile from "../EditProfile/EditProfile";
+import Keuangan from "../Keuangan/Keuangan"
 
 const AppRouter = ({ user }) => {
   return (
@@ -50,6 +51,14 @@ const AppRouter = ({ user }) => {
           element={
             <Layout>
               <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path="/keuangan"
+          element={
+            <Layout>
+              <Keuangan />
             </Layout>
           }
         />
