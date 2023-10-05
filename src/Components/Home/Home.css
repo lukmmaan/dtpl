@@ -29,6 +29,7 @@
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-transform: uppercase;
+  color: white;
 }
 
 .hero-subtitle {
@@ -73,3 +74,4 @@
   background-color: darkslategray;
   /* Ubah warna latar belakang saat dihover */
 }
+

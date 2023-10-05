@@ -14,8 +14,6 @@ const Pengaduan = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (nama && alamat && pengaduan) {
-      // Lakukan sesuatu dengan data pengaduan seperti pengiriman ke server atau penyimpanan lokal
-      // Anda dapat menambahkan logika sesuai kebutuhan Anda di sini
       console.log("Data Pengaduan:", {
         nama,
         alamat,

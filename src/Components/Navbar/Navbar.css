@@ -14,7 +14,14 @@
   align-items: center;
   justify-content: space-between;
   transition: background-color 0.3s ease;
-  z-index: 1;
+  /* z-index: 1; */
+  position: fixed;
+  /* top: 0;
+  left: 0;
+  right: 0; */
+  /* background-color: #333; */
+  z-index: 1000;
+  /* Atur nilai z-index tinggi untuk navbar */
   /* Untuk mengatasi komponen lainnya */
 }
 
