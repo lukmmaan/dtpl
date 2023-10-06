@@ -51,6 +51,11 @@ const Navbar = ({ user }) => {
           </Link>
         </li>
         <li className="nav-item">
+          <Link to="/umkm-list" className="nav-link">
+            Usaha Desa
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link to="/contact" className="nav-link">
             About Us!
           </Link>

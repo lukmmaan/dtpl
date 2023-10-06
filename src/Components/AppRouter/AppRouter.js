@@ -20,6 +20,8 @@ import Keuangan from "../Keuangan/Keuangan";
 import Pengaduan from "../Pengaduan/Pengaduan";
 import DestinasiList from "../DestinasiList/DestinasiList";
 import Berita from "../Berita/Berita";
+import UMKMList from "../Umkm/UMKMList";
+import UMKMDetail from "../Umkm/UMKMDetail";
 
 const AppRouter = ({ user }) => {
   return (
@@ -30,6 +32,22 @@ const AppRouter = ({ user }) => {
           element={
             <Layout>
               <BlankPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/umkm-list"
+          element={
+            <Layout>
+              <UMKMList />
+            </Layout>
+          }
+        />
+        <Route
+          path="/umkm/:id"
+          element={
+            <Layout>
+              <UMKMDetail />
             </Layout>
           }
         />

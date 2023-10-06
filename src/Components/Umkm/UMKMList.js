@@ -1,0 +1,26 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+import DataUmkm from "./DataUmkm";
+import { News } from "../../Assets/Image/index";
+import "./UMKMList.css";
+
+const UMKMList = () => {
+  return (
+    <div className="umkm-list-container">
+      <h1>Daftar UMKM</h1>
+      <div className="umkm-cards">
+        {DataUmkm.map((umkm) => (
+          <div className="umkm-card" key={umkm.id}>
+            <Link to={`/umkm/${umkm.id}`} className="umkm-link">
+              <img src={News} alt={umkm.nama} className="umkm-image" />
+              <h3>{umkm.nama}</h3>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default UMKMList;

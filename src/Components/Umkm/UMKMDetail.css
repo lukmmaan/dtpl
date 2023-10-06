@@ -1,0 +1,102 @@
+.umkm-detail-container {
+    background-color: #f5f5f5;
+    /* Warna coklat muda */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    margin-left: 70px;
+    margin-right: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.umkm-detail-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.umkm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.umkm-table th {
+    background-color: #fff;
+    /* Warna putih */
+    font-weight: bold;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.umkm-table td {
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #555;
+}
+
+.umkm-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.umkm-table tr:hover {
+    background-color: #ddd;
+}
+
+.umkm-table td:first-child {
+    font-weight: bold;
+    width: 30%;
+}
+
+.sub-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.sub-table th {
+    background-color: #fff;
+    /* Warna putih */
+    font-weight: bold;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.sub-table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+.sub-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.sub-table tr:hover {
+    background-color: #ddd;
+}
+
+/* Menghilangkan bullet dari daftar */
+.umkm-table ul,
+.sub-table ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

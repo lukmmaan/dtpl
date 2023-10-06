@@ -1,0 +1,51 @@
+/* UMKMList.css */
+.umkm-list-container {
+    text-align: center;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin-top: 110px;
+    margin-bottom: 250px;
+}
+
+h1 {
+    color: #654321;
+}
+
+.umkm-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.umkm-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    max-width: 300px;
+}
+
+.umkm-card:hover {
+    transform: scale(1.05);
+}
+
+.umkm-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.umkm-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.umkm-card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
