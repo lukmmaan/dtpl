@@ -19,6 +19,7 @@ import EditProfile from "../EditProfile/EditProfile";
 import Keuangan from "../Keuangan/Keuangan";
 import Pengaduan from "../Pengaduan/Pengaduan";
 import Destinasi from "../Destinasi/Destinasi";
+import DestinasiList from "../DestinasiList/DestinasiList";
 
 const AppRouter = ({ user }) => {
   return (
@@ -37,6 +38,14 @@ const AppRouter = ({ user }) => {
           element={
             <Layout>
               <Destinasi />
+            </Layout>
+          }
+        />
+        <Route
+          path="/destinasi-list"
+          element={
+            <Layout>
+              <DestinasiList />
             </Layout>
           }
         />

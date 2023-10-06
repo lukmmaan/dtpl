@@ -30,6 +30,10 @@ const destinasiData = [
 ];
 
 const DestinasiCarousel = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0); // Mengatur posisi scroll ke paling atas halaman
+  };
+
   return (
     <div className="carousel-container">
       <Carousel
@@ -45,7 +49,7 @@ const DestinasiCarousel = () => {
             <div className="destinasi-card-content">
               <h2>{destinasi.nama}</h2>
               <p>{destinasi.deskripsi}</p>
-              <Link to={`/destinasi`}>
+              <Link to={"/destinasi-list"} onClick={handleScrollToTop}>
                 <button className="destinasi-button">Lihat Selengkapnya</button>
               </Link>
             </div>

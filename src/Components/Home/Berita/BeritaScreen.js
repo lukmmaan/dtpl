@@ -110,6 +110,9 @@ const BeritaScreen = () => {
     }
     return result;
   };
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0); // Mengatur posisi scroll ke paling atas halaman
+  };
 
   const beritaChunks = splitBeritaData(beritaData, 4);
 
@@ -120,7 +123,12 @@ const BeritaScreen = () => {
         {beritaChunks.map((beritaRow, rowIndex) => (
           <div className="berita-row" key={rowIndex}>
             {beritaRow.map((berita) => (
-              <Link to={`/destinasi`} key={berita.id} className="berita-link">
+              <Link
+                to={`/destinasi`}
+                key={berita.id}
+                className="berita-link"
+                onClick={handleScrollToTop}
+              >
                 <div className="berita-card" key={berita.id}>
                   <img src={News} alt={berita.judul} />
                   <h2>{berita.judul}</h2>
