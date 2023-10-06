@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+
+import { Umkm2 } from "../../Assets/Image/index";
 import DataUmkm from "./DataUmkm";
 import "./UMKMDetail.css";
 
@@ -14,6 +16,7 @@ const UMKMDetail = () => {
   return (
     <div className="umkm-detail-container">
       <h1>{umkm.nama}</h1>
+      <img src={Umkm2} alt={Umkm2} className="umkm-image" />
       <table className="umkm-table">
         <tbody>
           <tr>

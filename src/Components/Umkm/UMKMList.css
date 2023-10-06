@@ -40,7 +40,8 @@ h1 {
 }
 
 .umkm-image {
-    max-width: 100%;
+    /* max-width: 20%; */
+    width: 700px;
     height: auto;
     border-radius: 10px;
 }
