@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Element, Link } from "react-scroll"; // Impor Element dan Link dari react-scroll
 import "./Home.css";
 import DestinasiCarousel from "./Carousel/Carousel";
 import BeritaScreen from "./Berita/BeritaScreen";
@@ -14,13 +13,16 @@ const Home = () => {
           <p className="hero-subtitle">
             Temukan keindahan alam dan budaya kami yang luar biasa.
           </p>
-          <Link to="/services" className="home-button">
-            Pelajari Lebih Lanjut
+          <Link to="destinasi-carousel" smooth={true} duration={100}>
+            <button className="hero-button">Pelajari Lebih Lanjut</button>
           </Link>
         </div>
       </div>
-      <DestinasiCarousel />
-      <div className="divider"></div> {/* Pembatas */}
+      <Element name="destinasi-carousel" className="element">
+        {/* Gunakan Element untuk menandai elemen yang akan di-scroll */}
+        <DestinasiCarousel />
+      </Element>
+      <div className="divider"></div>
       <BeritaScreen />
     </>
   );

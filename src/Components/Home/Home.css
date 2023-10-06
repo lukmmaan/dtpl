@@ -17,12 +17,10 @@
   width: 80%;
   max-width: 600px;
   transition: transform 0.3s ease;
-  /* Animasi ketika dihover */
 }
 
 .hero-section:hover {
   transform: scale(1.05);
-  /* Kartu membesar ketika dihover */
 }
 
 .hero-title {
@@ -47,14 +45,11 @@
   border-radius: 5px;
   font-size: 1.2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
-  /* Animasi warna tombol */
 }
 
 .hero-button:hover {
   background-color: #d2691e;
-  /* Warna tombol berubah saat dihover */
   color: #fff;
-  /* Warna teks tombol tetap putih saat dihover */
 }
 
 .home-button {
@@ -67,29 +62,19 @@
   border-radius: 5px;
   font-size: 1.2rem;
   transition: background-color 0.3s ease;
-  /* Animasi perubahan warna latar belakang saat dihover */
 }
 
 .home-button:hover {
   background-color: darkslategray;
-  /* Ubah warna latar belakang saat dihover */
 }
 
-/* Styling untuk elemen pembatas */
 .divider {
   height: 2px;
-  /* Ubah tinggi pembatas sesuai kebutuhan */
   background-color: rgba(107, 62, 22, 0.3);
-  /* Warna pembatas dengan opacity */
   margin: 30px 0;
-  /* Jarak atas dan bawah pembatas */
   width: 80%;
-  /* Lebar pembatas, sesuaikan dengan preferensi Anda */
   margin-left: auto;
   margin-right: auto;
-  /* Untuk membuat pembatas menjadi pusat */
   border: none;
-  /* Hilangkan border jika ada */
   border-radius: 4px;
-  /* Sudut melengkung pada pembatas */
 }
