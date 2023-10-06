@@ -1,9 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
-import { News } from "../../../Assets/Image/index";
-import "./BeritaCard.css";
-
 const beritaData = [
   {
     id: 1,
@@ -102,45 +96,5 @@ const beritaData = [
     gambar: "pendidikan-anak.jpg",
   },
 ];
-const BeritaScreen = () => {
-  const splitBeritaData = (data, chunkSize) => {
-    const result = [];
-    for (let i = 0; i < data.length; i += chunkSize) {
-      result.push(data.slice(i, i + chunkSize));
-    }
-    return result;
-  };
-  const handleScrollToTop = () => {
-    window.scrollTo(0, 0); // Mengatur posisi scroll ke paling atas halaman
-  };
 
-  const beritaChunks = splitBeritaData(beritaData, 4);
-
-  return (
-    <div className="berita-container">
-      <h1>Berita Terbaru</h1>
-      <div className="berita-card-container">
-        {beritaChunks.map((beritaRow, rowIndex) => (
-          <div className="berita-row" key={rowIndex}>
-            {beritaRow.map((berita) => (
-              <Link
-                to={`/berita`}
-                key={berita.id}
-                className="berita-link"
-                onClick={handleScrollToTop}
-              >
-                <div className="berita-card" key={berita.id}>
-                  <img src={News} alt={berita.judul} />
-                  <h2>{berita.judul}</h2>
-                  <p>{berita.isi}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default BeritaScreen;
+export default beritaData;

@@ -18,8 +18,8 @@ import BlankPage from "../BlankPage/Blankpage";
 import EditProfile from "../EditProfile/EditProfile";
 import Keuangan from "../Keuangan/Keuangan";
 import Pengaduan from "../Pengaduan/Pengaduan";
-import Destinasi from "../Destinasi/Destinasi";
 import DestinasiList from "../DestinasiList/DestinasiList";
+import Berita from "../Berita/Berita";
 
 const AppRouter = ({ user }) => {
   return (
@@ -34,10 +34,10 @@ const AppRouter = ({ user }) => {
           }
         />
         <Route
-          path="/destinasi"
+          path="/berita"
           element={
             <Layout>
-              <Destinasi />
+              <Berita />
             </Layout>
           }
         />
