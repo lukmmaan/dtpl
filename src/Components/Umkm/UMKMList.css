@@ -50,3 +50,34 @@ h1 {
     font-size: 18px;
     margin-top: 10px;
 }
+
+.umkm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #fff; */
+    /* padding: 10px 0; */
+}
+
+.umkm-header h1 {
+    color: #8b4513;
+    font-size: 28px;
+    text-align: center;
+    flex: 1;
+}
+
+.umkm-registration-link {
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.umkm-registration-link:hover {
+    background-color: #703b0d;
+}
