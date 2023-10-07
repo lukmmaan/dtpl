@@ -53,12 +53,15 @@
 .destinasi-left h1,
 .destinasi-right h1 {
     font-size: 36px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 20px;
 }
 
 .destinasi-left p,
 .destinasi-right p {
     font-size: 18px;
+    margin-left: 20px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
