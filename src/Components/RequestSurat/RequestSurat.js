@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import { connect } from "react-redux";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 
 import { API_URL } from "../../Constants/Api";
 import "./RequestSurat.css";
 
-const RequestSurat = () => {
+const RequestSurat = ({ user }) => {
   const [formData, setFormData] = useState({
     fullName: "",
-    email: "",
+    email: user.email,
     nik: "",
     alamat: "",
     jenisSurat: "Surat Keterangan Domisili",
@@ -32,7 +33,7 @@ const RequestSurat = () => {
 
       setFormData({
         fullName: "",
-        email: "",
+        email: user.email,
         nik: "",
         alamat: "",
         jenisSurat: "Surat Keterangan Domisili",
@@ -82,7 +83,8 @@ const RequestSurat = () => {
             id="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}
+            disabled
+            // onChange={handleChange}
             required
           />
         </div>
@@ -145,4 +147,10 @@ const RequestSurat = () => {
   );
 };
 
-export default RequestSurat;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user.user,
+  };
+};
+
+export default connect(mapStateToProps)(RequestSurat);
