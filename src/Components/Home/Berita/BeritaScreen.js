@@ -8,7 +8,7 @@ const beritaData = [
   {
     id: 1,
     judul: "Pengembangan Ekowisata Desa",
-    isi: "Desa kita terus mengembangkan ekowisata sebagai upaya meningkatkan perekonomian masyarakat.",
+    isi: "Desa kita terus mengembangkan ekowisata upaya meningkatkan perekonomian masyarakat.",
     gambar: "ekowisata.jpg",
   },
   {

@@ -8,7 +8,7 @@ import "./UMKMList.css";
 const UMKMList = () => {
   return (
     <div className="umkm-list-container">
-      <h1>Daftar UMKM</h1>
+      <h1>Usaha Desa Manud Jaya</h1>
       <div className="umkm-cards">
         {DataUmkm.map((umkm) => (
           <div className="umkm-card" key={umkm.id}>

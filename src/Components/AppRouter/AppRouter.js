@@ -22,6 +22,7 @@ import DestinasiList from "../DestinasiList/DestinasiList";
 import Berita from "../Berita/Berita";
 import UMKMList from "../Umkm/UMKMList";
 import UMKMDetail from "../Umkm/UMKMDetail";
+import InputUmkm from "../InputUmkm/InputUmkm";
 
 const AppRouter = ({ user }) => {
   return (
@@ -32,6 +33,14 @@ const AppRouter = ({ user }) => {
           element={
             <Layout>
               <BlankPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/input-umkm"
+          element={
+            <Layout>
+              <InputUmkm />
             </Layout>
           }
         />
