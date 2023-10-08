@@ -52,10 +52,6 @@ const Login = () => {
       );
       // Navigasi ke halaman utama ("/") setelah login berhasil
       navigate("/");
-      scroll.scrollToTop({
-        duration: 100, // Durasi animasi dalam milidetik
-        smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
-      });
       setLoading(false);
     } catch (error) {
       swal({
