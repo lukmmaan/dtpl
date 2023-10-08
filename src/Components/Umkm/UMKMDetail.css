@@ -26,6 +26,12 @@
     margin-bottom: 20px;
 }
 
+.umkm-detail-image {
+    max-width: 25%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
 .umkm-table {
     width: 100%;
     border-collapse: collapse;

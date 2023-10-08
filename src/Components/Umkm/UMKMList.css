@@ -5,7 +5,7 @@
     font-family: Arial, sans-serif;
     padding: 20px;
     margin-top: 110px;
-    margin-bottom: 250px;
+    margin-bottom: 80px;
 }
 
 h1 {
@@ -80,4 +80,28 @@ h1 {
 
 .umkm-registration-link:hover {
     background-color: #703b0d;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: #333;
+}
+
+.page-button.active {
+    background-color: #8b4513;
+    color: #fff;
 }
