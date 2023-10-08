@@ -9,3 +9,4 @@ export const Wisata5 = require("./5.jpeg");
 export const News = require("./news.jpeg");
 export const Umkm = require("./umkm.png");
 export const Umkm2 = require("./umkm2.png");
+export const IzinUmkm = require("./izinUmkm.jpeg");

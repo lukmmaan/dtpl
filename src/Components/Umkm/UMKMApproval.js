@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./UMKMApproval.css";
 import DataUmkm from "./DataUmkm";
-import { Umkm } from "../../Assets/Image";
+import { IzinUmkm } from "../../Assets/Image";
 
 const UMKMApproval = () => {
   const [umkmData, setUmkmData] = useState(DataUmkm);
@@ -57,7 +57,11 @@ const UMKMApproval = () => {
         <div key={rowIndex} className="approve-umkm-card-row">
           {row.map((umkm) => (
             <div className="approve-umkm-card" key={umkm.id}>
-              <img src={Umkm} alt={umkm.nama} className="approve-umkm-image" />
+              <img
+                src={IzinUmkm}
+                alt={umkm.nama}
+                className="approve-umkm-image"
+              />
               <h2>{umkm.nama}</h2>
               <div className="approve-umkm-card-content">
                 <div className="approve-umkm-card-content">
