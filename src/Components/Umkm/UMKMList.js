@@ -1,18 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert2";
 
 import DataUmkm from "./DataUmkm";
 import { Umkm } from "../../Assets/Image/index";
 import "./UMKMList.css";
 
-const UMKMList = () => {
+const UMKMList = ({ user }) => {
+  const navigate = useNavigate();
+  const handleDaftarUmkmClick = () => {
+    if (user && user.role === "") {
+      swal.fire({
+        title: "Harap Login Dulu",
+        text: "Anda harus login terlebih dahulu untuk mendaftar UMKM.",
+        icon: "warning",
+      });
+    } else {
+      navigate("/input-umkm");
+    }
+  };
+
   return (
     <div className="umkm-list-container">
       <div className="umkm-header">
         <h1>Usaha Desa Manud Jaya</h1>
-        <Link to="/input-umkm" className="umkm-registration-link">
+        <button
+          onClick={handleDaftarUmkmClick}
+          className="umkm-registration-link"
+        >
           Daftar UMKM
-        </Link>
+        </button>
       </div>
       <div className="umkm-cards">
         {DataUmkm.map((umkm) => (
@@ -28,4 +46,10 @@ const UMKMList = () => {
   );
 };
 
-export default UMKMList;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user.user,
+  };
+};
+
+export default connect(mapStateToProps)(UMKMList);

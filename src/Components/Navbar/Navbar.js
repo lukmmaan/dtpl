@@ -57,7 +57,7 @@ const Navbar = ({ user }) => {
         </li>
         <li className="nav-item">
           <Link to="/contact" className="nav-link">
-            About Us!
+            About Us
           </Link>
         </li>
         <li className="nav-item dropdown">
