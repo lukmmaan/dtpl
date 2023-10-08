@@ -29,10 +29,6 @@ const Navbar = ({ user }) => {
     dispatch(clearUser());
     cookies.remove("authData");
     navigate("/login");
-    scroll.scrollToTop({
-      duration: 100, // Durasi animasi dalam milidetik
-      smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
-    });
   };
 
   // Fungsi untuk menutup dropdown saat area di luar dropdown diklik
