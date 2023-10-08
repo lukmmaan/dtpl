@@ -4,7 +4,7 @@ import { updateUserProfile } from "../../redux/reducers/userActions";
 import Axios from "axios";
 import swal from "sweetalert";
 
-import { API_URL } from "../../Constants/Api";
+import { API_URL, Headers } from "../../Constants/Api";
 import "./EditProfile.css";
 
 const EditProfile = ({ user }) => {
@@ -23,7 +23,7 @@ const EditProfile = ({ user }) => {
 
   useEffect(() => {
     // Mengambil data pengguna dari API (mock data)
-    Axios.get(`${API_URL}/allUser`)
+    Axios.get(`${API_URL}/users`, Headers(user.token))
       .then((response) => {
         setUsers(response.data);
       })
@@ -41,9 +41,13 @@ const EditProfile = ({ user }) => {
     e.preventDefault();
     setIsLoading(true);
 
-    Axios.put(`${API_URL}/updateUser/${selectedUser._id}/${formData.role}`)
+    Axios.put(
+      `${API_URL}/users/${selectedUser._id}`,
+      { role: formData.role },
+      Headers(user.token)
+    )
       .then((response) => {
-        Axios.get(`${API_URL}/allUser`)
+        Axios.get(`${API_URL}/users`, Headers(user.token))
           .then((response) => {
             setUsers(response.data);
             setIsModalVisible(false);
@@ -56,8 +60,8 @@ const EditProfile = ({ user }) => {
           .catch((error) => {
             console.error("Error fetching user data:", error);
             swal({
-              title: "Error Mengganti Role",
-              text: error.response.data.message,
+              title: "Gagal Reload Data",
+              text: "Gagal Reload Data",
               icon: "error",
               button: "OK",
             });
@@ -67,6 +71,12 @@ const EditProfile = ({ user }) => {
           });
       })
       .catch((error) => {
+        swal({
+          title: "Gagal Mengganti Role",
+          text: "Gagal Mengganti Role",
+          icon: "error",
+          button: "OK",
+        });
         console.error("Error updating user role:", error);
         setIsLoading(false);
       });

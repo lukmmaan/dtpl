@@ -30,12 +30,13 @@ const Login = () => {
 
     try {
       const response = await Axios.post(`${API_URL}/login/`, formData);
-      const { fullName, email, role } = response.data;
+      console.log(response);
+      const { fullName, email, role, token } = response.data;
       const cookie = new Cookies();
 
       setLoading(true);
 
-      dispatch(setUser({ fullName, email, role }));
+      dispatch(setUser({ fullName, email, role, token }));
 
       swal({
         title: "Login Berhasil",
@@ -45,7 +46,7 @@ const Login = () => {
 
       cookie.set(
         "authData",
-        JSON.stringify({ user: { fullName, email, role } }),
+        JSON.stringify({ user: { fullName, email, role, token } }),
         {
           path: "/",
         }

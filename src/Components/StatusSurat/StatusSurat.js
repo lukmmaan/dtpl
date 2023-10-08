@@ -26,13 +26,14 @@ const StatusSurat = ({ user }) => {
   useEffect(() => {
     Axios.get(`${API_URL}/listSurat/${user.email}`)
       .then((response) => {
+        console.log(response);
         // Mengambil data surat dari server
         const suratData = response.data;
 
         setStatusSuratList(suratData);
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error, user);
       });
   }, []);
 

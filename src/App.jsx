@@ -19,8 +19,9 @@ function App() {
     let cookieResult = cookies.get("authData", { path: "/" });
 
     if (cookieResult) {
-      const { user: { fullName, email, role } } = cookieResult;
-      dispatch(setUser({ fullName, email, role }));
+      const { user: { fullName, email, role, token } } = cookieResult;
+
+      dispatch(setUser({ fullName, email, role, token }));
     }
 
   }, [navigate]);

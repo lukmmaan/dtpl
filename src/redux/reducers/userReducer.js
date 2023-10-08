@@ -5,6 +5,7 @@ const initialState = {
     fullName: "",
     role: "",
     email: "",
+    token: "",
   },
 };
 
@@ -30,6 +31,7 @@ const userReducer = (state = initialState, action) => {
           fullName: "",
           role: "",
           email: "",
+          token: "",
         },
       };
     default:
