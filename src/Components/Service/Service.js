@@ -37,7 +37,7 @@ const Services = ({ user }) => {
         </p>
       </div>
       <div className="services-grid">
-        {user.role !== "user" && user.role !== "" && (
+        {user.role !== "user" && user.role !== "" && user.role !== "admin" && (
           <div className="service-card">
             <h3>Approval Surat</h3>
             <p>
