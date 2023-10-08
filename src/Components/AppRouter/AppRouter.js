@@ -37,14 +37,6 @@ const AppRouter = ({ user }) => {
           }
         />
         <Route
-          path="/input-umkm"
-          element={
-            <Layout>
-              <InputUmkm />
-            </Layout>
-          }
-        />
-        <Route
           path="/umkm-list"
           element={
             <Layout>
@@ -170,6 +162,16 @@ const AppRouter = ({ user }) => {
                 </Layout>
               }
             />
+            {user.role === "user" && (
+              <Route
+                path="/input-umkm"
+                element={
+                  <Layout>
+                    <InputUmkm />
+                  </Layout>
+                }
+              />
+            )}
           </>
         )}
       </Routes>

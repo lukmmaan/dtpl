@@ -25,12 +25,14 @@ const UMKMList = ({ user }) => {
     <div className="umkm-list-container">
       <div className="umkm-header">
         <h1>Usaha Desa Manud Jaya</h1>
-        <button
-          onClick={handleDaftarUmkmClick}
-          className="umkm-registration-link"
-        >
-          Daftar UMKM
-        </button>
+        {user && (user.role === "" || user.role === "user") && (
+          <button
+            onClick={handleDaftarUmkmClick}
+            className="umkm-registration-link"
+          >
+            Daftar UMKM
+          </button>
+        )}
       </div>
       <div className="umkm-cards">
         {DataUmkm.map((umkm) => (
