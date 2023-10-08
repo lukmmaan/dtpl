@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { animateScroll as scroll } from "react-scroll";
 import { connect, useDispatch } from "react-redux";
 import Cookies from "universal-cookie";
@@ -24,11 +25,24 @@ const Navbar = ({ user }) => {
   };
 
   const handleLogout = () => {
-    const cookies = new Cookies();
+    Swal.fire({
+      title: "Yakin ingin logout?",
+      text: "Anda akan keluar dari akun Anda.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "green",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Ya, Logout",
+      cancelButtonText: "Batal",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const cookies = new Cookies();
 
-    dispatch(clearUser());
-    cookies.remove("authData");
-    navigate("/login");
+        dispatch(clearUser());
+        cookies.remove("authData");
+        navigate("/login");
+      }
+    });
   };
 
   // Fungsi untuk menutup dropdown saat area di luar dropdown diklik
