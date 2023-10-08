@@ -1,11 +1,11 @@
 import React from "react";
-import "./BlankPage.css"; // Import file CSS yang akan digunakan
+import "./BlankPage.css";
 
 const BlankPage = () => {
   return (
     <div className="blank-page">
-      <h2>Selamat Datang di Halaman Blank</h2>
-      <p>Salah Jalan....!!! xixixixi :D </p>
+      <h2 className="page-title">Selamat Datang di Halaman Blank</h2>
+      <p className="page-description">Anda mungkin tersesat... :D</p>
     </div>
   );
 };

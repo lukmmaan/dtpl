@@ -1,7 +1,6 @@
 // Contact.js
 
 import React from "react";
-
 import { GoogleMap } from "../../Assets/Image/index";
 import "./Contact.css";
 
@@ -10,7 +9,7 @@ const Contact = () => {
     <section className="contact-section">
       <div className="contact-content">
         <div className="contact-info">
-          <h2>Profil Kantor Desa Manud Jaya</h2>
+          <h2>Kantor Desa Manud Jaya</h2>
           <p>
             Desa Manud Jaya adalah sebuah permukiman yang terletak di tengah
             hutan yang mempesona. Kami memiliki budaya yang kaya, keindahan alam
@@ -31,11 +30,10 @@ const Contact = () => {
           </p>
         </div>
         <div className="contact-map">
-          {/* Tambahkan peta atau gambar lokasi kantor Desa Manud Jaya */}
           <img
             src={GoogleMap}
             alt="Lokasi Kantor Desa Manud Jaya"
-            width={"60%"}
+            className="rotating-image"
           />
         </div>
       </div>

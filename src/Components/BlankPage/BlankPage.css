@@ -1,20 +1,43 @@
 /* BlankPage.css */
 .blank-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    text-align: center;
-    margin-top: 200px;
-    margin-bottom: 300px;
+    margin: 0 auto;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    margin-top: 340px;
+    margin-bottom: 250px;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    animation: rotate 2s linear infinite;
+    /* Menerapkan animasi dengan nama 'rotate' */
 }
 
-.blank-page h2 {
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        /* Sudut awal rotasi */
+    }
+
+    to {
+        transform: rotate(360deg);
+        /* Sudut akhir rotasi (putaran penuh) */
+    }
+}
+
+.page-title {
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
 }
 
-.blank-page p {
+.page-description {
     font-size: 1.2rem;
     color: #666;
+    text-align: center;
+    /* Mengatur teks agar berada di tengah */
 }
-
-/* Style tambahan sesuai kebutuhan Anda */
