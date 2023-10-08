@@ -38,7 +38,9 @@ const UMKMList = ({ user }) => {
     setCurrentPage(page);
   };
 
-  const totalPages = Math.ceil(searchResults.length / itemsPerPage);
+  const totalPages = Math.ceil(
+    (isSearching ? searchResults.length : DataUmkm.length) / itemsPerPage
+  );
 
   // Fungsi untuk melakukan pencarian saat perubahan input
   const handleSearch = (e) => {
@@ -182,7 +184,7 @@ const UMKMList = ({ user }) => {
           )}
           <button
             onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
+            disabled={currentPage >= totalPages}
             className="page-button"
           >
             Next
