@@ -10,9 +10,12 @@
 
 h1 {
     color: #654321;
+    margin: 0;
+    padding: 0;
 }
 
 .umkm-cards {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -40,8 +43,8 @@ h1 {
 }
 
 .umkm-image {
-    /* max-width: 20%; */
-    width: 700px;
+    max-width: 100%;
+    /* Mengatur lebar gambar agar tidak terlalu besar */
     height: auto;
     border-radius: 10px;
 }
@@ -55,8 +58,6 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #fff; */
-    /* padding: 10px 0; */
 }
 
 .umkm-header h1 {
@@ -82,7 +83,6 @@ h1 {
     background-color: #703b0d;
 }
 
-
 .pagination {
     display: flex;
     justify-content: center;
@@ -104,4 +104,16 @@ h1 {
 .page-button.active {
     background-color: #8b4513;
     color: #fff;
+}
+
+.custom-search-bar {
+    margin-top: 20px;
+    border: 2px solid #8b4513;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    /* Mengatur lebar input pencarian agar memenuhi kontainer */
+    max-width: 300px;
+    /* Mengatur maksimum lebar input pencarian */
 }

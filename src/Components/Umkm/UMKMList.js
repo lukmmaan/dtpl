@@ -1,3 +1,4 @@
+// UMKMList.js
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,8 +12,11 @@ import "./UMKMList.css";
 const UMKMList = ({ user }) => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState(""); // State untuk penyimpanan kata kunci pencarian
   const itemsPerPage = 5;
-  const maxPagesToShow = 10; 
+  const maxPagesToShow = 10;
+  const [searchResults, setSearchResults] = useState([]); // State untuk penyimpanan hasil pencarian
+  const [isSearching, setIsSearching] = useState(false); // State untuk mengindikasikan apakah sedang dalam proses pencarian
 
   const handleDaftarUmkmClick = () => {
     if (user && user.role === "") {
@@ -34,19 +38,84 @@ const UMKMList = ({ user }) => {
     setCurrentPage(page);
   };
 
-  const totalPages = Math.ceil(DataUmkm.length / itemsPerPage);
+  const totalPages = Math.ceil(searchResults.length / itemsPerPage);
 
-  let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
-  let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+  // Fungsi untuk melakukan pencarian saat perubahan input
+  const handleSearch = (e) => {
+    const newSearchTerm = e.target.value;
+    setSearchTerm(newSearchTerm);
 
-  if (endPage - startPage < maxPagesToShow - 1) {
-    startPage = Math.max(1, endPage - maxPagesToShow + 1);
-  }
+    // Melakukan pencarian dengan memfilter data sesuai dengan kata kunci
+    const results = DataUmkm.filter((umkm) =>
+      umkm.nama.toLowerCase().includes(newSearchTerm.toLowerCase())
+    );
+    setSearchResults(results); // Menyimpan hasil pencarian
+    setCurrentPage(1); // Mengembalikan halaman ke halaman pertama saat mencari
+    setIsSearching(true); // Mengubah status pencarian menjadi true
+    if (e.target.value === "") {
+      setIsSearching(false);
+    }
+  };
 
-  const filteredData = DataUmkm.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+  // Render tampilan sesuai dengan apakah sedang dalam proses pencarian atau tidak
+  const renderContent = () => {
+    if (isSearching) {
+      // Jika sedang dalam proses pencarian, tampilkan hasil pencarian
+      return (
+        <div className="umkm-cards">
+          {searchResults
+            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+            .map((umkm) => (
+              <div className="umkm-card" key={umkm.id}>
+                <Link
+                  onClick={() => {
+                    scroll.scrollToTop({
+                      duration: 100,
+                      smooth: "easeInOutQuart",
+                    });
+                  }}
+                  to={`/umkm/${umkm.id}`}
+                  className="umkm-link"
+                >
+                  <img src={Umkm} alt={umkm.nama} className="umkm-image" />
+                  <h3>{umkm.nama}</h3>
+                </Link>
+              </div>
+            ))}
+        </div>
+      );
+    } else {
+      // Jika tidak dalam proses pencarian, tampilkan semua data
+      return (
+        <div className="umkm-cards">
+          {DataUmkm.slice(
+            (currentPage - 1) * itemsPerPage,
+            currentPage * itemsPerPage
+          ).map((umkm) =>
+            umkm.status === "approved" ? (
+              <div className="umkm-card" key={umkm.id}>
+                <Link
+                  onClick={() => {
+                    scroll.scrollToTop({
+                      duration: 100,
+                      smooth: "easeInOutQuart",
+                    });
+                  }}
+                  to={`/umkm/${umkm.id}`}
+                  className="umkm-link"
+                >
+                  <img src={Umkm} alt={umkm.nama} className="umkm-image" />
+                  <h3>{umkm.nama}</h3>
+                </Link>
+              </div>
+            ) : (
+              <></>
+            )
+          )}
+        </div>
+      );
+    }
+  };
 
   return (
     <div className="umkm-list-container">
@@ -65,8 +134,8 @@ const UMKMList = ({ user }) => {
             onClick={() => {
               navigate("/umkm-approval");
               scroll.scrollToTop({
-                duration: 100, // Durasi animasi dalam milidetik
-                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                duration: 100,
+                smooth: "easeInOutQuart",
               });
             }}
             className="umkm-registration-link"
@@ -75,71 +144,51 @@ const UMKMList = ({ user }) => {
           </button>
         )}
       </div>
-      <div className="umkm-cards">
-        {filteredData.map((umkm) =>
-          umkm.status === "approved" ? (
-            <div className="umkm-card" key={umkm.id}>
-              <Link
-                onClick={() => {
-                  scroll.scrollToTop({
-                    duration: 100,
-                    smooth: "easeInOutQuart",
-                  });
-                }}
-                to={`/umkm/${umkm.id}`}
-                className="umkm-link"
-              >
-                <img src={Umkm} alt={umkm.nama} className="umkm-image" />
-                <h3>{umkm.nama}</h3>
-              </Link>
-            </div>
-          ) : (
-            <></>
-          )
-        )}
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Cari UMKM apaan bang?"
+          value={searchTerm}
+          onChange={handleSearch}
+          className="custom-search-bar"
+        />
       </div>
-      <div className="pagination">
-        <button
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="page-button"
-        >
-          Previous
-        </button>
-        {startPage > 1 && (
-          <button onClick={() => handlePageChange(1)} className="page-button">
-            1
-          </button>
-        )}
-        {startPage > 2 && <button className="ellipsis">...</button>}
-        {Array.from({ length: endPage - startPage + 1 }).map((_, index) => (
+      {renderContent()}
+      {!isSearching && (
+        <div className="pagination">
           <button
-            key={index}
-            onClick={() => handlePageChange(startPage + index)}
-            className={`page-button ${
-              currentPage === startPage + index ? "active" : ""
-            }`}
-          >
-            {startPage + index}
-          </button>
-        ))}
-        {endPage < totalPages - 1 && <button className="ellipsis">...</button>}
-        {endPage < totalPages && (
-          <button
-            onClick={() => handlePageChange(totalPages)}
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
             className="page-button"
           >
-            {totalPages}
+            Previous
           </button>
-        )}
-        <button
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="page-button"
-        >
-          Next
-        </button>
-      </div>
+          {currentPage > 1 && (
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              className="page-button"
+            >
+              {currentPage - 1}
+            </button>
+          )}
+          <button className="page-button active">{currentPage}</button>
+          {currentPage < totalPages && (
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              className="page-button"
+            >
+              {currentPage + 1}
+            </button>
+          )}
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="page-button"
+          >
+            Next
+          </button>
+        </div>
+      )}
     </div>
   );
 };

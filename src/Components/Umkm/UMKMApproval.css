@@ -1,4 +1,5 @@
-/* Komponen UMKM Card */
+/* CSS UMKMApproval */
+
 .approve-umkm-card-container {
     display: flex;
     flex-direction: column;
@@ -7,11 +8,30 @@
     margin-bottom: 50px;
 }
 
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    transition: 0.3s;
+    outline: none;
+}
+
+.search-container input[type="text"]:focus {
+    background-color: #ddd;
+}
+
 .approve-umkm-card-row {
     display: flex;
     justify-content: center;
     gap: 20px;
-    /* Jarak antara card */
 }
 
 .approve-umkm-card {
@@ -20,12 +40,9 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: white;
     max-width: 500px;
-    /* Maksimum lebar card */
     width: 100%;
-    /* Agar card memenuhi lebar kolom dalam grid */
     transition: transform 0.3s ease;
     margin-top: 20px;
-    /* Tambahkan margin atas pada card */
     padding: 20px;
 }
 
@@ -45,10 +62,8 @@
 .approve-umkm-card-content p {
     margin: 0;
     padding: 5px 0;
-    /* Tambahkan padding di sekitar teks */
 }
 
-/* Tombol "Approve" dan "Decline" */
 .approve-umkm-card-actions {
     display: flex;
     justify-content: center;
@@ -62,9 +77,7 @@
     transition: background-color 0.3s ease;
     margin: 0 5px;
     border-radius: 4px;
-    /* Tambahkan border-radius */
     font-family: 'Arial', sans-serif;
-    /* Sesuaikan dengan font yang diinginkan */
 }
 
 .approve-umkm-card-actions button:hover {
@@ -87,7 +100,6 @@
     border-radius: 8px;
 }
 
-/* Tambahkan margin atas pada baris card */
 .approve-umkm-card-row+.approve-umkm-card-row {
     margin-top: 20px;
 }
@@ -95,13 +107,49 @@
 .approve-umkm-card-content p {
     margin: 0;
     padding-bottom: 5px;
-    /* Tambahkan padding bawah untuk pemisah */
     border-bottom: 1px solid #ddd;
-    /* Tambahkan garis bawah */
 }
 
 .approve-umkm-card-content p::before {
     content: attr(data-label);
     font-weight: bold;
     margin-right: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.prev-button,
+.next-button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+}
+
+.prev-button:disabled,
+.next-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    filter: brightness(90%);
+}
+
+.prev-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.next-button {
+    background-color: #007bff;
+    color: white;
 }
