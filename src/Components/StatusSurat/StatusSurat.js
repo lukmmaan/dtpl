@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Axios from "axios";
 
 import "./StatusSurat.css";
+import { Surat } from "../../Assets/Surat/index";
 import { API_URL } from "../../Constants/Api";
 
 const StatusSurat = ({ user }) => {
@@ -15,7 +16,8 @@ const StatusSurat = ({ user }) => {
     if (statusSurat === "kepalaRT") return "Menunggu persetujuan ketua RT.";
     if (statusSurat === "kepalaRW") return "Menunggu persetujuan ketua RW.";
     if (statusSurat === "kepalaDesa") return "Menunggu persetujuan ketua Desa.";
-    if (statusSurat === "Done") return "Persetujuan surat sudah selesai.";
+    // if (statusSurat === "Done")
+    //   return `Persetujuan surat sudah selesai. Download Surat anda disini`;
     if (statusSurat === "Decline")
       return `Mohon maaf permintaan surat ditolak oleh ${declineBy}, 
       silahkan hubungi pihak terkait.`;
@@ -61,7 +63,36 @@ const StatusSurat = ({ user }) => {
                   fontWeight: surat.statusSurat === "Decline" && "bold",
                 }}
               >
-                {statusSuratFunc(surat)}
+                {surat.statusSurat === "Done" ? (
+                  <p>
+                    Persetujuan surat sudah selesai. Download Surat anda
+                    <a
+                      href={Surat} // Ganti dengan URL atau path yang sesuai dengan dokumen yang ingin Anda unduh
+                      download="Surat.pdf" // Nama file yang akan diunduh
+                      target="_blank"
+                      style={{
+                        marginLeft: "5px",
+                        backgroundColor: "#8B4513",
+                        color: "#fff",
+                        padding: "5px 10px",
+                        borderRadius: "5px",
+                        textDecoration: "none",
+                        transition: "background-color 0.3s ease-in-out",
+                      }}
+                      // Menambahkan gaya hover
+                      onMouseOver={(e) =>
+                        (e.target.style.backgroundColor = "chocolate")
+                      }
+                      onMouseOut={(e) =>
+                        (e.target.style.backgroundColor = "#8B4513")
+                      }
+                    >
+                      disini
+                    </a>
+                  </p>
+                ) : (
+                  statusSuratFunc(surat)
+                )}
               </td>
               <td>
                 <table>
