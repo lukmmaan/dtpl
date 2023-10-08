@@ -23,6 +23,7 @@ import Berita from "../Berita/Berita";
 import UMKMList from "../Umkm/UMKMList";
 import UMKMDetail from "../Umkm/UMKMDetail";
 import InputUmkm from "../InputUmkm/InputUmkm";
+import UMKMApproval from "../Umkm/UMKMApproval";
 
 const AppRouter = ({ user }) => {
   return (
@@ -168,6 +169,16 @@ const AppRouter = ({ user }) => {
                 element={
                   <Layout>
                     <InputUmkm />
+                  </Layout>
+                }
+              />
+            )}
+            {user.role === "kepalaDesa" && (
+              <Route
+                path="/umkm-approval"
+                element={
+                  <Layout>
+                    <UMKMApproval />
                   </Layout>
                 }
               />

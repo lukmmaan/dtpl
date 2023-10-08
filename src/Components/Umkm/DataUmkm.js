@@ -285,8 +285,10 @@ const DataUmkm = [
     profil:
       "Pusat Oleh-oleh Desa adalah tempat untuk membeli oleh-oleh khas desa.",
     foto: "oleholeh.jpg",
-    ulasan: "Oleh-olehnya enak dan bervariasi.",
-    program: "Program peningkatan kualitas oleh-oleh.",
+    ulasan:
+      "Oleh-olehnya enak dan bervariasi.Stoknya lengkap dan harganya terjangkau.",
+    program:
+      "Program peningkatan kualitas oleh-oleh kepada keluarga yang membutuhkan.",
     dukungan: "Dukungan pemasaran oleh-oleh desa secara nasional.",
     produk: [
       {

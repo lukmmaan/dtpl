@@ -1,0 +1,107 @@
+/* Komponen UMKM Card */
+.approve-umkm-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 110px;
+    margin-bottom: 50px;
+}
+
+.approve-umkm-card-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Jarak antara card */
+}
+
+.approve-umkm-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    max-width: 500px;
+    /* Maksimum lebar card */
+    width: 100%;
+    /* Agar card memenuhi lebar kolom dalam grid */
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+    /* Tambahkan margin atas pada card */
+    padding: 20px;
+}
+
+.approve-umkm-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.approve-umkm-card h2 {
+    margin-top: 0;
+}
+
+.approve-umkm-card-content {
+    margin-top: 10px;
+}
+
+.approve-umkm-card-content p {
+    margin: 0;
+    padding: 5px 0;
+    /* Tambahkan padding di sekitar teks */
+}
+
+/* Tombol "Approve" dan "Decline" */
+.approve-umkm-card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.approve-umkm-card-actions button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+    border-radius: 4px;
+    /* Tambahkan border-radius */
+    font-family: 'Arial', sans-serif;
+    /* Sesuaikan dengan font yang diinginkan */
+}
+
+.approve-umkm-card-actions button:hover {
+    filter: brightness(90%);
+}
+
+.approve-umkm-card-actions .approve-umkm-approve-button {
+    background-color: green;
+    color: white;
+}
+
+.approve-umkm-card-actions .approve-umkm-decline-button {
+    background-color: red;
+    color: white;
+}
+
+.approve-umkm-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Tambahkan margin atas pada baris card */
+.approve-umkm-card-row+.approve-umkm-card-row {
+    margin-top: 20px;
+}
+
+.approve-umkm-card-content p {
+    margin: 0;
+    padding-bottom: 5px;
+    /* Tambahkan padding bawah untuk pemisah */
+    border-bottom: 1px solid #ddd;
+    /* Tambahkan garis bawah */
+}
+
+.approve-umkm-card-content p::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 5px;
+}

@@ -33,6 +33,14 @@ const UMKMList = ({ user }) => {
             Daftar UMKM
           </button>
         )}
+        {user && user.role === "kepalaDesa" && (
+          <button
+            onClick={() => navigate("/umkm-approval")}
+            className="umkm-registration-link"
+          >
+            Approval UMKM
+          </button>
+        )}
       </div>
       <div className="umkm-cards">
         {DataUmkm.map((umkm) => (
