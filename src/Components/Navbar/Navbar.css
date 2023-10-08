@@ -188,6 +188,7 @@
   font-weight: bold;
   font-size: 1.2rem;
   transition: color 0.3s ease;
+  cursor: pointer !important;
 }
 
 .dropdown-link:hover {
