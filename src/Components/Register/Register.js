@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { animateScroll as scroll } from "react-scroll";
 import swal from "sweetalert";
 
 import { API_URL } from "../../Constants/Api";
@@ -48,6 +49,10 @@ const Register = () => {
 
       // Navigasi ke halaman login setelah pendaftaran berhasil
       navigate("/login");
+      scroll.scrollToTop({
+        duration: 100, // Durasi animasi dalam milidetik
+        smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+      });
     } catch (error) {
       setLoading(false);
 
@@ -120,7 +125,18 @@ const Register = () => {
         "Loading..."
       ) : (
         <p>
-          Sudah punya akun? <Link to="/login">Masuk disini</Link>
+          Sudah punya akun?{" "}
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="/login"
+          >
+            Masuk disini
+          </Link>
         </p>
       )}
     </div>

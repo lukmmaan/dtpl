@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { animateScroll as scroll } from "react-scroll";
 import { useSelector, useDispatch } from "react-redux";
 import Axios from "axios";
 import swal from "sweetalert";
@@ -42,12 +43,19 @@ const Login = () => {
         button: "OK !",
       });
 
-      cookie.set("authData", JSON.stringify({user:{ fullName, email, role }}), {
-        path: "/",
-      });
+      cookie.set(
+        "authData",
+        JSON.stringify({ user: { fullName, email, role } }),
+        {
+          path: "/",
+        }
+      );
       // Navigasi ke halaman utama ("/") setelah login berhasil
       navigate("/");
-
+      scroll.scrollToTop({
+        duration: 100, // Durasi animasi dalam milidetik
+        smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+      });
       setLoading(false);
     } catch (error) {
       swal({
@@ -98,7 +106,18 @@ const Login = () => {
         "Loading..."
       ) : (
         <p>
-          Belum punya akun? <Link to="/register">Daftar disini</Link>
+          Belum punya akun?{" "}
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="/register"
+          >
+            Daftar disini
+          </Link>
         </p>
       )}
     </div>

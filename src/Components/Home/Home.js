@@ -1,5 +1,6 @@
 import React from "react";
-import { Element, Link } from "react-scroll"; // Impor Element dan Link dari react-scroll
+import { Element, Link, animateScroll as scroll } from "react-scroll";
+
 import "./Home.css";
 import DestinasiCarousel from "./Carousel/Carousel";
 import BeritaScreen from "./Berita/BeritaScreen";
@@ -13,7 +14,17 @@ const Home = () => {
           <p className="hero-subtitle">
             Temukan keindahan alam dan budaya kami yang luar biasa.
           </p>
-          <Link to="destinasi-carousel" smooth={true} duration={100}>
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="destinasi-carousel"
+            smooth={true}
+            duration={100}
+          >
             <button className="hero-button">Pelajari Lebih Lanjut</button>
           </Link>
         </div>

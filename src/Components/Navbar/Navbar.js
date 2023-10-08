@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
 import { connect, useDispatch } from "react-redux";
 import Cookies from "universal-cookie";
 
@@ -28,6 +29,10 @@ const Navbar = ({ user }) => {
     dispatch(clearUser());
     cookies.remove("authData");
     navigate("/login");
+    scroll.scrollToTop({
+      duration: 100, // Durasi animasi dalam milidetik
+      smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+    });
   };
 
   // Fungsi untuk menutup dropdown saat area di luar dropdown diklik
@@ -41,22 +46,58 @@ const Navbar = ({ user }) => {
       <div className="menu-icon" onClick={toggleMenu}></div>
       <ul className={`nav-list ${menuOpen ? "active" : ""}`}>
         <li className="nav-item">
-          <Link to="/" className="nav-link">
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="/"
+            className="nav-link"
+          >
             Beranda
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/services" className="nav-link">
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="/services"
+            className="nav-link"
+          >
             Administrasi
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/umkm-list" className="nav-link">
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="/umkm-list"
+            className="nav-link"
+          >
             Usaha Desa
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/contact" className="nav-link">
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="/contact"
+            className="nav-link"
+          >
             About Us
           </Link>
         </li>
@@ -69,12 +110,30 @@ const Navbar = ({ user }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="dropdown-item">
-              <Link to="/keuangan" className="dropdown-link">
+              <Link
+                onClick={() => {
+                  scroll.scrollToTop({
+                    duration: 100, // Durasi animasi dalam milidetik
+                    smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                  });
+                }}
+                to="/keuangan"
+                className="dropdown-link"
+              >
                 Lap. Keuangan
               </Link>
             </div>
             <div className="dropdown-item">
-              <Link to="/pengaduan" className="dropdown-link">
+              <Link
+                onClick={() => {
+                  scroll.scrollToTop({
+                    duration: 100, // Durasi animasi dalam milidetik
+                    smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                  });
+                }}
+                to="/pengaduan"
+                className="dropdown-link"
+              >
                 Pengaduan
               </Link>
             </div>
@@ -84,7 +143,16 @@ const Navbar = ({ user }) => {
       <div className="login-section">
         {user && user.fullName ? (
           <>
-            <Link to="/editProfile" className="login-link">
+            <Link
+              onClick={() => {
+                scroll.scrollToTop({
+                  duration: 100, // Durasi animasi dalam milidetik
+                  smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                });
+              }}
+              to="/editProfile"
+              className="login-link"
+            >
               {user.fullName}
             </Link>
             <button className="logout-button" onClick={handleLogout}>
@@ -92,7 +160,16 @@ const Navbar = ({ user }) => {
             </button>
           </>
         ) : (
-          <Link to="/login" className="login-link">
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="/login"
+            className="login-link"
+          >
             Login
           </Link>
         )}

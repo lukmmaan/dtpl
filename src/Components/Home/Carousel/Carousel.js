@@ -49,7 +49,10 @@ const DestinasiCarousel = () => {
             <div className="destinasi-card-content">
               <h2>{destinasi.nama}</h2>
               <p>{destinasi.deskripsi}</p>
-              <Link to={"/destinasi-list"} onClick={handleScrollToTop}>
+              <Link
+                to={"/destinasi-list"}
+                onClick={handleScrollToTop}
+              >
                 <button className="destinasi-button">Lihat Selengkapnya</button>
               </Link>
             </div>

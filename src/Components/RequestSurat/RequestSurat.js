@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { connect } from "react-redux";
 import swal from "sweetalert";
+import { animateScroll as scroll } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
 import { API_URL } from "../../Constants/Api";
@@ -48,6 +49,10 @@ const RequestSurat = ({ user }) => {
         button: "OK !",
       });
       navigate("/status-surat");
+      scroll.scrollToTop({
+        duration: 100, // Durasi animasi dalam milidetik
+        smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+      });
     } catch (err) {
       console.log(err);
       swal({

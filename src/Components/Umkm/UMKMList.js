@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
 import swal from "sweetalert2";
 
 import DataUmkm from "./DataUmkm";
@@ -18,6 +19,10 @@ const UMKMList = ({ user }) => {
       });
     } else {
       navigate("/input-umkm");
+      scroll.scrollToTop({
+        duration: 100, // Durasi animasi dalam milidetik
+        smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+      });
     }
   };
 
@@ -35,7 +40,13 @@ const UMKMList = ({ user }) => {
         )}
         {user && user.role === "kepalaDesa" && (
           <button
-            onClick={() => navigate("/umkm-approval")}
+            onClick={() => {
+              navigate("/umkm-approval");
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
             className="umkm-registration-link"
           >
             Approval UMKM
@@ -45,7 +56,16 @@ const UMKMList = ({ user }) => {
       <div className="umkm-cards">
         {DataUmkm.map((umkm) => (
           <div className="umkm-card" key={umkm.id}>
-            <Link to={`/umkm/${umkm.id}`} className="umkm-link">
+            <Link
+              onClick={() => {
+                scroll.scrollToTop({
+                  duration: 100, // Durasi animasi dalam milidetik
+                  smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                });
+              }}
+              to={`/umkm/${umkm.id}`}
+              className="umkm-link"
+            >
               <img src={Umkm} alt={umkm.nama} className="umkm-image" />
               <h3>{umkm.nama}</h3>
             </Link>
