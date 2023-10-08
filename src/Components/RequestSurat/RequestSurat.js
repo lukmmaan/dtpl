@@ -54,7 +54,6 @@ const RequestSurat = ({ user }) => {
         smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
       });
     } catch (err) {
-      console.log(err);
       swal({
         title: "Ooopps !",
         text: "Gagal",

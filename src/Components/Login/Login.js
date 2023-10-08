@@ -30,7 +30,7 @@ const Login = () => {
 
     try {
       const response = await Axios.post(`${API_URL}/login/`, formData);
-      console.log(response);
+      
       const { fullName, email, role, token } = response.data;
       const cookie = new Cookies();
 

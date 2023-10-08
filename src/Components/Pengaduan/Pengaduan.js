@@ -28,16 +28,16 @@ const Pengaduan = () => {
         cancelButtonText: "Batal",
       }).then((result) => {
         if (result.isConfirmed) {
-          console.log("Data Pengaduan:", {
-            nama,
-            alamat,
-            pengaduan,
-            nomorTelepon,
-            tanggalKejadian,
-            lokasiKejadian,
-            prioritas,
-            kategori,
-          });
+          // console.log("Data Pengaduan:", {
+          //   nama,
+          //   alamat,
+          //   pengaduan,
+          //   nomorTelepon,
+          //   tanggalKejadian,
+          //   lokasiKejadian,
+          //   prioritas,
+          //   kategori,
+          // });
           Swal.fire({
             icon: "success",
             title: "Pengaduan berhasil dikirim",

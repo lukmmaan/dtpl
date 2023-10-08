@@ -83,8 +83,8 @@ const EditProfile = ({ user }) => {
   };
 
   const handleEditUser = (selectedId) => {
-    console.log(selectedId, users);
     const userToEdit = users.find((user) => user._id === selectedId);
+    
     if (userToEdit) {
       setSelectedUser(userToEdit);
       setIsModalVisible(true);

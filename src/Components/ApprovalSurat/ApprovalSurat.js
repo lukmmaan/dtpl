@@ -17,7 +17,6 @@ const ApprovalSurat = ({ user }) => {
       })
       .catch((error) => {
         console.error("Error:", error);
-        console.log("masuk karena surat sudah habis");
       });
   };
 

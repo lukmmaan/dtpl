@@ -146,7 +146,6 @@ const InputUmkm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(umkm);
     swal.fire({
       title: "Sukses!",
       text: "Data UMKM berhasil disubmit.",
