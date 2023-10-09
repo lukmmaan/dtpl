@@ -13,7 +13,7 @@
     margin-top: 0;
     position: relative;
     width: 100%;
-    height: 92%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,13 +65,13 @@
     /* Letakkan tombol di bawah */
     background-color: rgba(0, 0, 0, 0.3);
     /* Latar belakang transparan dengan sedikit kegelapan */
-    border: none;
-    padding: 10px 20px;
-    /* Ukuran tombol */
-    border-radius: 5px;
-    /* Sudut tombol yang membulat */
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border: none !important;
+    padding: 6px 70px !important;
+    /* Increase padding for larger buttons */
+    border-radius: 10px !important;
+    /* Increase border-radius for more rounded buttons */
+    cursor: pointer !important;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out !important;
 }
 
 .prev-button::before,

@@ -16,3 +16,4 @@ export const Kampung2 = require("./kampung2.jpg");
 export const Kampung3 = require("./kampung3.jpg");
 export const Kampung4 = require("./kampung4.jpg");
 export const Kampung5 = require("./kampung5.jpg");
+export const Kampung6 = require("./kampung6.jpg");

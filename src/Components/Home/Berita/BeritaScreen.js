@@ -117,7 +117,7 @@ const BeritaScreen = () => {
   const beritaChunks = splitBeritaData(beritaData, 4);
 
   return (
-    <div className="berita-container">
+    <div className="berita-container-full">
       <h1>Berita Terbaru</h1>
       <div className="berita-card-container">
         {beritaChunks.map((beritaRow, rowIndex) => (

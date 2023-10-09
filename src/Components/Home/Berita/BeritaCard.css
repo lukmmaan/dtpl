@@ -1,14 +1,16 @@
 /* BeritaScreen.css */
-.berita-container {
-    margin-top: 50px;
+.berita-container-full {
     text-align: center;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    background-image: url('../../../Assets/Image/kampung6.jpg');
+    background-size: cover;
 }
 
 .berita-card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0.88;
 }
 
 /* Styling untuk baris berita */
@@ -40,6 +42,7 @@
 .berita-card:hover {
     transform: scale(1.05);
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    opacity: 1;
 }
 
 .berita-card h2 {
