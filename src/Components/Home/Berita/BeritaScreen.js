@@ -229,7 +229,7 @@ const BeritaScreen = () => {
           show={modalIsOpen}
           onHide={closeModal}
           dialogClassName="modal-container"
-        >
+          >
           <Modal.Header closeButton>
             <Modal.Title style={{ textAlign: "center", fontWeight: "bold" }}>
               {selectedBerita.judul}

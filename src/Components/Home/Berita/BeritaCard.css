@@ -97,7 +97,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px; /* Menambahkan spasi di atas modal */
+    margin-top: 40px;
+    /* Menambahkan spasi di atas modal */
     width: 500px;
 }
 
@@ -144,4 +145,11 @@ h1 {
     font-size: 20px;
     color: #333;
     margin-top: 0;
+}
+
+.modal-container {
+    overflow-y: auto;
+    /* Membuat modal dapat di-scroll jika kontennya melebihi ketinggian modal */
+    max-height: 80vh;
+    /* Mengatur ketinggian maksimum modal (misalnya, 80% dari ketinggian viewport) */
 }
