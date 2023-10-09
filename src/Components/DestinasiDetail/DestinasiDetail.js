@@ -1,7 +1,7 @@
 // DestinasiDetail.js
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Kampung4 } from "../../Assets/Image/index";
+import { Kampung7 } from "../../Assets/Image/index";
 import DestinasiData from "../DestinasiList/DestinasiData";
 import "./DestinasiDetail.css";
 
@@ -12,7 +12,7 @@ const DestinasiDetail = () => {
   return (
     <div className="destinasi-detail">
       <div className="destinasi-header">
-        <img src={Kampung4} alt={data.nama} />
+        <img src={Kampung7} alt={data.nama} style={{ width: "60%" }} />
         <h1>{data.nama}</h1>
         <p>{data.lokasi}</p>
       </div>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
+
 import "./Carousel.css";
 import { Kampung1, Kampung2, Kampung3 } from "../../../Assets/Image/index";
 import DestinasiData from "../../DestinasiList/DestinasiData";
@@ -52,6 +54,12 @@ const DestinasiSlider = () => {
           <h2>{DestinasiData[currentIndex].nama}</h2>
           <p>{DestinasiData[currentIndex].deskripsi}</p>
           <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100,
+                smooth: "easeInOutQuart",
+              });
+            }}
             to={{
               pathname: `/destinasi-detail/${DestinasiData[currentIndex].id}`,
             }}
