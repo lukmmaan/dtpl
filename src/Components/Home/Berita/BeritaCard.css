@@ -16,7 +16,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    opacity: 0.88;
+    /* opacity: 0.88; */
 }
 
 /* Styling untuk berita-card */
