@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { News } from "../../../Assets/Image/index";
@@ -103,40 +103,42 @@ const beritaData = [
   },
 ];
 const BeritaScreen = () => {
-  const splitBeritaData = (data, chunkSize) => {
-    const result = [];
-    for (let i = 0; i < data.length; i += chunkSize) {
-      result.push(data.slice(i, i + chunkSize));
-    }
-    return result;
-  };
-  const handleScrollToTop = () => {
-    window.scrollTo(0, 0); // Mengatur posisi scroll ke paling atas halaman
-  };
+  const itemsPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const beritaChunks = splitBeritaData(beritaData, 4);
+  const totalPages = Math.ceil(beritaData.length / itemsPerPage);
+  const beritaChunks = beritaData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div className="berita-container-full">
-      <h1>Berita Terbaru</h1>
+      <h1 style={{ marginTop: "200px" }}>Berita Terbaru</h1>
       <div className="berita-card-container">
-        {beritaChunks.map((beritaRow, rowIndex) => (
-          <div className="berita-row" key={rowIndex}>
-            {beritaRow.map((berita) => (
-              <Link
-                to={`/berita`}
-                key={berita.id}
-                className="berita-link"
-                onClick={handleScrollToTop}
-              >
-                <div className="berita-card" key={berita.id}>
-                  <img src={News} alt={berita.judul} />
-                  <h2>{berita.judul}</h2>
-                  <p>{berita.isi}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+        {beritaChunks.map((berita) => (
+          <Link to={`/berita`} key={berita.id} className="berita-link">
+            <div className="berita-card" key={berita.id}>
+              <img src={News} alt={berita.judul} />
+              <h2>{berita.judul}</h2>
+              <p>{berita.isi}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+      <div className="pagination">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index}
+            onClick={() => handlePageChange(index + 1)}
+            className={currentPage === index + 1 ? "active" : ""}
+          >
+            {index + 1}
+          </button>
         ))}
       </div>
     </div>

@@ -1,25 +1,25 @@
-/* BeritaScreen.css */
+/* Styling untuk berita-container-full */
 .berita-container-full {
     text-align: center;
-    /* margin-bottom: 30px; */
     background-image: url('../../../Assets/Image/kampung6.jpg');
     background-size: cover;
+    padding: 20px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
+/* Styling untuk berita-card-container */
 .berita-card-container {
+    margin-top: 100px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     opacity: 0.88;
 }
 
-/* Styling untuk baris berita */
-.berita-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
+/* Styling untuk berita-card */
 .berita-card {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -32,19 +32,27 @@
     transition: transform 0.2s ease-in-out;
 }
 
-/* Tambahkan styling untuk gambar di dalam card berita */
+/* Styling untuk gambar di dalam berita-card */
 .berita-card img {
     max-width: 100%;
     height: auto;
 }
 
-/* Tambahkan styling untuk efek hover */
+/* Efek hover pada berita-card */
 .berita-card:hover {
     transform: scale(1.05);
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
     opacity: 1;
 }
 
+/* Styling untuk judul Berita Terbaru */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk teks di dalam berita-card */
 .berita-card h2 {
     font-size: 18px;
     margin-bottom: 10px;
@@ -56,15 +64,29 @@
     color: #666;
 }
 
-/* Styling untuk judul Berita Terbaru */
-h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
+/* Styling untuk link di dalam berita-card */
 .berita-link {
     text-decoration: none;
     color: inherit;
-    /* Mengambil warna default dari teks */
+}
+
+/* Styling untuk pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    border: none;
+    background-color: transparent;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.pagination button.active {
+    font-weight: bold;
+    color: #333;
 }

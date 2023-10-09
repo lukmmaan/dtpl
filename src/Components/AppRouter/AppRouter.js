@@ -2,7 +2,12 @@
 
 import React from "react";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 import Layout from "../Layout";
 import Home from "../Home/Home";
@@ -27,6 +32,10 @@ import UMKMApproval from "../Umkm/UMKMApproval";
 import DestinasiDetail from "../DestinasiDetail/DestinasiDetail";
 
 const AppRouter = ({ user }) => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  console.log(isHomePage);
+
   return (
     <div className="App">
       <Routes>
@@ -195,7 +204,7 @@ const AppRouter = ({ user }) => {
           </>
         )}
       </Routes>
-      <Footer />
+      {!isHomePage && <Footer />}
     </div>
   );
 };

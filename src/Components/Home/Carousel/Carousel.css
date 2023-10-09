@@ -61,7 +61,7 @@
 .prev-button,
 .next-button {
     position: absolute;
-    bottom: 20px;
+    bottom: 120px;
     /* Letakkan tombol di bawah */
     background-color: rgba(0, 0, 0, 0.3);
     /* Latar belakang transparan dengan sedikit kegelapan */
