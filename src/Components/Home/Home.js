@@ -1,5 +1,6 @@
 import React from "react";
-import { Element, Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
 
 import "./Home.css";
 import DestinasiCarousel from "./Carousel/Carousel";
@@ -21,19 +22,14 @@ const Home = () => {
                 smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
               });
             }}
-            to="destinasi-carousel"
-            smooth={true}
-            duration={100}
+            to="/contact"
+            className="hero-button"
           >
-            <button className="hero-button">Pelajari Lebih Lanjut</button>
+            Pelajari Lebih Lanjut
           </Link>
         </div>
       </div>
-      <Element name="destinasi-carousel" className="element">
-        {/* Gunakan Element untuk menandai elemen yang akan di-scroll */}
-        <DestinasiCarousel />
-      </Element>
-      <div className="divider"></div>
+      <DestinasiCarousel />
       <BeritaScreen />
     </>
   );

@@ -1,97 +1,131 @@
-/* Styling untuk card destinasi wisata */
-.destinasi-card {
+/* Carousel.css */
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.slider {
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+    height: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* Untuk mengatur tombol di bawah teks */
+}
+
+.slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    /* Set opasitas awal menjadi 0 */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.info-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    width: 30%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    margin-top: 20px;
-    /* Sedikit dikurangi untuk ketinggian yang lebih baik */
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
     justify-content: center;
-    height: 550px;
-    margin-bottom: 80px;
-    /* Mengubah tinggi carousel */
+    transition: background-color 0.3s ease-in-out;
 }
 
-.destinasi-card img {
-    max-height: 350px;
-    /* Maksimum tinggi gambar */
-    object-fit: cover;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.destinasi-card:hover {
-    transform: scale(1.05);
-    background-color: #fff;
-}
-
-/* Styling untuk konten card destinasi wisata */
-.destinasi-card-content {
-    margin-top: 10px;
-}
-
-.destinasi-card h2 {
+.info-box h2 {
     font-size: 24px;
     color: #333;
     margin-bottom: 10px;
 }
 
-.destinasi-card p {
+.info-box p {
     font-size: 16px;
     color: #666;
-    margin-bottom: 20px;
 }
 
-/* Styling untuk tombol "Lihat Selengkapnya" */
-.destinasi-button {
-    background-color: #d2691e;
-    color: #fff;
-    padding: 10px 20px;
-    font-weight: bold;
+.prev-button,
+.next-button {
+    position: absolute;
+    bottom: 20px;
+    /* Letakkan tombol di bawah */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Latar belakang transparan dengan sedikit kegelapan */
     border: none;
+    padding: 10px 20px;
+    /* Ukuran tombol */
     border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Sudut tombol yang membulat */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.destinasi-button:hover {
-    background-color: #a0522d;
+.prev-button::before,
+.next-button::before {
+    /* content: "\u25C0"; */
+    /* Ikutkan simbol panah kiri (Previous) */
+    font-size: 20px;
     color: #fff;
+    /* Warna ikon */
 }
 
-.carousel .control-arrow {
-    font-size: 24px;
-    /* Ukuran font tombol pagination */
-    color: #d2691e;
-    /* Warna font tombol pagination */
-    background: transparent;
-    /* Hapus latar belakang tombol pagination */
+.prev-button {
+    left: 20px;
+    /* Geser ke kiri */
 }
 
-.carousel .control-dots .dot {
-    background: #d2691e;
-    /* Warna latar belakang dot pagination */
-    box-shadow: none;
-    /* Hapus shadow pada dot pagination */
-    width: 12px;
-    /* Ukuran lebar dot pagination */
-    height: 12px;
-    /* Ukuran tinggi dot pagination */
-    margin: 0 5px;
-    /* Jarak antara dot pagination */
+.next-button {
+    right: 20px;
+    /* Geser ke kanan */
 }
 
-.carousel .control-dots .dot.selected {
-    background: #a0522d;
-    /* Warna latar belakang dot pagination saat aktif */
+.prev-button:hover,
+.next-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Warna latar belakang saat dihover */
+    transform: translateY(0) scale(1.1);
+    /* Efek hover */
+}
+
+.detail-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8b4513;
+    /* Warna coklat tua untuk nuansa vintage */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #8b4513;
+    /* Garis tepi */
+    border-radius: 25px;
+    /* Border yang lebih bulat */
+    font-size: 1.2rem;
+    /* Ukuran teks yang lebih besar */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    /* Jarak dari teks deskripsi */
+    cursor: pointer;
+    /* Mengubah ikon kursor menjadi tangan saat menghover tombol */
+}
+
+.detail-button:hover {
+    background-color: #cd853f;
+    /* Warna coklat yang lebih terang saat dihover */
+    color: #fff;
+    transform: scale(1.05);
+    /* Efek scaling saat digantungkan */
 }

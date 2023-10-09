@@ -24,6 +24,7 @@ import UMKMList from "../Umkm/UMKMList";
 import UMKMDetail from "../Umkm/UMKMDetail";
 import InputUmkm from "../InputUmkm/InputUmkm";
 import UMKMApproval from "../Umkm/UMKMApproval";
+import DestinasiDetail from "../DestinasiDetail/DestinasiDetail";
 
 const AppRouter = ({ user }) => {
   return (
@@ -42,6 +43,14 @@ const AppRouter = ({ user }) => {
           element={
             <Layout>
               <UMKMList />
+            </Layout>
+          }
+        />
+        <Route
+          path="/destinasi-detail/:id"
+          element={
+            <Layout>
+              <DestinasiDetail />
             </Layout>
           }
         />

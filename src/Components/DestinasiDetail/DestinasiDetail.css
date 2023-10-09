@@ -1,0 +1,121 @@
+/* DestinasiDetail.css */
+.destinasi-detail {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: calc(100% - 60px);
+    margin-top: 30px;
+    padding: 20px;
+    text-align: left;
+    margin-top: 110px;
+}
+
+.destinasi-header {
+    text-align: center;
+    padding: 20px;
+}
+
+.destinasi-header img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.destinasi-header h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.destinasi-header p {
+    font-style: italic;
+    color: #777;
+}
+
+.destinasi-content {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.destinasi-section {
+    flex-basis: calc(50% - 15px);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.destinasi-section:hover {
+    transform: scale(1.02);
+}
+
+.destinasi-section h2 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+    color: #333;
+}
+
+.destinasi-section p {
+    margin-top: 10px;
+    color: #555;
+}
+
+.destinasi-section ul {
+    margin-top: 10px;
+    color: #555;
+    list-style-type: none;
+}
+
+.destinasi-section ul li {
+    list-style: none;
+}
+
+.destinasi-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: #555;
+}
+
+.destinasi-section th,
+.destinasi-section td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.destinasi-section tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.destinasi-section tr:hover {
+    background-color: #ddd;
+}
+
+.destinasi-section a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.destinasi-section a:hover {
+    text-decoration: underline;
+}
+
+.button-buy {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.button-buy:hover {
+    background-color: #0056b3;
+}

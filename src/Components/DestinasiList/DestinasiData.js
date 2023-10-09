@@ -234,7 +234,25 @@ const DestinasiData = [
       "Belajar memasak tradisional",
       "Wisata kuliner",
     ],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: ["Rendang Manud", "Gulai Ikan Lokal", "Kopi Dusun"],
     transportasi: {
       cara: "Anda bisa mencapai area kuliner lokal dengan berjalan kaki atau menggunakan sepeda dari berbagai titik di Desa Manud Jaya.",
@@ -327,7 +345,25 @@ const DestinasiData = [
     gambar: "taman-rekreasi.jpg",
     atraksiUtama: "Wahana rekreasi, area bermain anak-anak, dan taman piknik.",
     aktivitas: ["Bermain di wahana", "Piknik keluarga", "Bermain voli pantai"],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: ["Makanan ringan", "Minuman segar", "Es krim"],
     transportasi: {
       cara: "Taman Rekreasi Keluarga dapat dicapai dengan berjalan kaki atau menggunakan sepeda dari berbagai titik di Desa Manud Jaya.",
@@ -366,7 +402,25 @@ const DestinasiData = [
       "Menyaksikan pertunjukan budaya",
       "Belajar membuat kerajinan tangan",
     ],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: [
       "Makanan tradisional",
       "Minuman lokal",
@@ -406,7 +460,25 @@ const DestinasiData = [
     atraksiUtama:
       "Trekking alam liar, eksplorasi hutan belantara, dan pengamatan burung.",
     aktivitas: ["Trekking", "Eksplorasi hutan", "Pengamatan burung"],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: ["Makanan ringan sehat", "Air minum", "Buah-buahan segar"],
     transportasi: {
       cara: "Dari Bandara Kota Terdekat, Anda bisa menggunakan taksi atau transportasi umum ke Hutan Manud. Trekking Hutan Manud berada di sekitar Desa Manud Jaya.",
@@ -444,7 +516,25 @@ const DestinasiData = [
       "Mengikuti lokakarya seni",
       "Berbelanja seni lokal",
     ],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: ["Makanan ringan", "Minuman segar", "Kue khas seni"],
     transportasi: {
       cara: "Anda bisa mencapai area seni dan kreativitas desa dengan berjalan kaki atau menggunakan sepeda dari berbagai titik di Desa Manud Jaya.",
@@ -480,7 +570,25 @@ const DestinasiData = [
     atraksiUtama:
       "Berjemur di pantai, berenang, dan bermain voli pantai di pasir hitam.",
     aktivitas: ["Berjemur", "Berenang", "Bermain voli pantai"],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: ["Seafood segar", "Es kelapa muda", "Sate ikan"],
     transportasi: {
       cara: "Dari Bandara Kota Terdekat, Anda bisa menggunakan taksi atau transportasi umum ke Pantai Pasir Hitam.",
@@ -519,7 +627,25 @@ const DestinasiData = [
       "Fotografi gua",
       "Penjelajahan stalaktit dan stalagmit",
     ],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: ["Makanan ringan", "Minuman segar", "Kue khas desa"],
     transportasi: {
       cara: "Dari Bandara Kota Terdekat, Anda bisa menggunakan taksi atau transportasi umum ke Gua Batu Karst.",
@@ -559,7 +685,25 @@ const DestinasiData = [
       "Ikuti program keberlanjutan",
       "Penanaman pohon",
     ],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: ["Makanan ringan sehat", "Air minum", "Buah-buahan segar"],
     transportasi: {
       cara: "Anda bisa mencapai area ekowisata desa dengan berjalan kaki atau menggunakan sepeda dari berbagai titik di Desa Manud Jaya.",
@@ -661,7 +805,25 @@ const DestinasiData = [
       "Berpartisipasi dalam proyek komunitas",
       "Belajar dari masyarakat lokal",
     ],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: [
       "Makanan ringan tradisional",
       "Minuman lokal",
@@ -705,7 +867,25 @@ const DestinasiData = [
       "Berpartisipasi dalam lokakarya bisnis",
       "Mengidentifikasi peluang kemitraan usaha",
     ],
-    akomodasi: [],
+    akomodasi: [
+      {
+        nama: "Hutan Lodge",
+        tipe: "Penginapan",
+        fasilitas: [
+          "Kamar dengan pemandangan hutan",
+          "Restoran makanan lokal",
+          "Penyewaan peralatan hiking",
+        ],
+      },
+      {
+        nama: "Camping Area",
+        tipe: "Kemping",
+        fasilitas: [
+          "Area berkemah dengan fasilitas toilet",
+          "Sumber air bersih",
+        ],
+      },
+    ],
     makananKuliner: [
       "Makanan ringan",
       "Minuman lokal",

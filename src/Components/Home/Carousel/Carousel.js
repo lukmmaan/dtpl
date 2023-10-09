@@ -1,66 +1,69 @@
-import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Wisata1, Wisata2, Wisata3 } from "../../../Assets/Image/index";
-import "./Carousel.css"; // Buat file CSS untuk styling tambahan
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Carousel.css";
+import { Kampung1, Kampung2, Kampung3 } from "../../../Assets/Image/index";
+import DestinasiData from "../../DestinasiList/DestinasiData";
 
-const destinasiData = [
-  {
-    id: 1,
-    image: Wisata1,
-    nama: "Destinasi Wisata 1",
-    deskripsi:
-      "Deskripsi singkat mengenai destinasi wisata ini. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    id: 2,
-    image: Wisata2,
-    nama: "Destinasi Wisata 2",
-    deskripsi:
-      "Deskripsi singkat mengenai destinasi wisata ini. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    id: 3,
-    image: Wisata3,
-    nama: "Destinasi Wisata 3",
-    deskripsi:
-      "Deskripsi singkat mengenai destinasi wisata ini. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-];
+const images = [Kampung1, Kampung2, Kampung3];
+const imageCount = 3; // Jumlah gambar yang akan diulang
 
-const DestinasiCarousel = () => {
-  const handleScrollToTop = () => {
-    window.scrollTo(0, 0); // Mengatur posisi scroll ke paling atas halaman
+const DestinasiSlider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === DestinasiData.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? DestinasiData.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Membuat slider berjalan otomatis setiap 5 detik
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000); // Ganti gambar setiap 5 detik
+
+    return () => clearInterval(interval); // Membersihkan interval saat komponen dilepas
+  }, [currentIndex]);
+
   return (
-    <div className="carousel-container">
-      <Carousel
-        showArrows={false}
-        showStatus={false}
-        showThumbs={false}
-        autoPlay={true} // Mengaktifkan auto play
-        interval={3000} // Interval auto play dalam milidetik
-      >
-        {destinasiData.map((destinasi) => (
-          <div className="destinasi-card" key={destinasi.id}>
-            <img src={destinasi.image} alt={destinasi.nama} />
-            <div className="destinasi-card-content">
-              <h2>{destinasi.nama}</h2>
-              <p>{destinasi.deskripsi}</p>
-              <Link
-                to={"/destinasi-list"}
-                onClick={handleScrollToTop}
-              >
-                <button className="destinasi-button">Lihat Selengkapnya</button>
-              </Link>
-            </div>
-          </div>
+    <div className="slider-container">
+      <div className="slider">
+        {DestinasiData.map((destinasi, index) => (
+          <img
+            key={index}
+            src={images[index % imageCount]} // Gunakan gambar dari array images dengan indeks yang diulang
+            alt={`Image ${index + 1}`}
+            style={{
+              opacity: index === currentIndex ? 1 : 0,
+              transition: "opacity 0.5s ease-in-out",
+            }}
+          />
         ))}
-      </Carousel>
+        <div className="info-box">
+          <strong>
+            <h1 style={{ marginBottom: "20px" }}>Wisata Manud Jaya</h1>
+          </strong>
+          <h2>{DestinasiData[currentIndex].nama}</h2>
+          <p>{DestinasiData[currentIndex].deskripsi}</p>
+          <Link
+            to={{
+              pathname: `/destinasi-detail/${DestinasiData[currentIndex].id}`,
+            }}
+          >
+            <button className="detail-button">Lihat Detail</button>
+          </Link>
+        </div>
+        <button className="prev-button" onClick={handlePrev}></button>
+        <button className="next-button" onClick={handleNext}></button>
+      </div>
     </div>
   );
 };
 
-export default DestinasiCarousel;
+export default DestinasiSlider;
