@@ -168,13 +168,13 @@ const BeritaScreen = () => {
   const openModal = (berita) => {
     setSelectedBerita(berita);
     setModalIsOpen(true);
-    document.body.style.overflow = "hidden"; // Menambahkan overflow: hidden pada body
+    // document.body.style.overflow = "hidden"; // Menambahkan overflow: hidden pada body
   };
 
   const closeModal = () => {
     setSelectedBerita(null);
     setModalIsOpen(false);
-    document.body.style.overflow = "auto"; // Menghapus overflow: hidden pada body
+    // document.body.style.overflow = "auto"; // Menghapus overflow: hidden pada body
   };
   useEffect(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
