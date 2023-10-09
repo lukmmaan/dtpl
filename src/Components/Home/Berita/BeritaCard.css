@@ -16,7 +16,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* opacity: 0.88; */
 }
 
 /* Styling untuk berita-card */
@@ -79,23 +78,70 @@ h1 {
     cursor: pointer;
     transition: color 0.3s ease-in-out;
     padding: 8px 12px;
-    /* Menambahkan padding untuk tombol */
     border-radius: 4px;
-    /* Menggunakan border-radius untuk sudut tombol */
     color: #333;
-    /* Warna teks default */
 }
 
 .berita-pagination-button:hover {
     background-color: #eee;
-    /* Warna latar belakang saat hover */
     color: #555;
-    /* Warna teks saat hover */
 }
 
 .berita-pagination-button:disabled {
     color: #999;
-    /* Warna untuk tombol dinonaktifkan */
     cursor: not-allowed;
-    /* Kursor dinonaktifkan saat tombol dinonaktifkan */
+}
+
+/* Styling untuk modal */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px; /* Menambahkan spasi di atas modal */
+    width: 500px;
+}
+
+/* Styling untuk modal container */
+.modal-container {
+    max-width: 80%;
+}
+
+/* Styling untuk judul modal */
+.modal-content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Styling untuk gambar dalam modal */
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Styling untuk isi teks dalam modal */
+.modal-content p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Styling untuk detail-box */
+.detail-box {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Styling untuk judul detail berita */
+.detail-box h3 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 0;
 }

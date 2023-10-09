@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Modal, Button } from "react-bootstrap";
 
 import {
   News1,
@@ -145,58 +145,67 @@ const beritaData = [
       "Pendidikan adalah salah satu prioritas utama di desa kami. Kami berusaha untuk memberikan akses pendidikan yang berkualitas kepada anak-anak kami. Melalui program pendidikan desa, kami telah memberikan beasiswa kepada siswa berprestasi dan melibatkan komunitas dalam mendukung pendidikan. Sekolah-sekolah kami dilengkapi dengan fasilitas yang memadai dan guru-guru yang berpengalaman. Kami berharap bahwa dengan pendidikan yang berkualitas, anak-anak kami akan memiliki peluang yang lebih baik untuk masa depan yang sukses dan akan menjadi pemimpin yang berkontribusi bagi masyarakat kami.",
   },
 ];
+
 const BeritaScreen = () => {
   const itemsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(beritaData.length / itemsPerPage);
 
   const [currentImages, setCurrentImages] = useState([]);
-  // Hitung beritaChunks
+  const [selectedBerita, setSelectedBerita] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
   const beritaChunks = beritaData.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
-  // Hitung totalPages
-
-  useEffect(() => {
-    // Menghitung indeks awal dan akhir berita yang akan ditampilkan di halaman saat ini
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-
-    // Mengambil berita-berita yang sesuai dengan halaman saat ini
-    const pageBerita = beritaData.slice(startIndex, endIndex);
-
-    // Mengambil gambar-gambar yang sesuai dengan berita di halaman ini
-    const pageImages = pageBerita.map(
-      (berita) => Images[(berita.id - 1) % imageCount]
-    );
-
-    // Update state dengan gambar-gambar yang sesuai
-    setCurrentImages(pageImages);
-  }, [currentPage]);
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
     }
   };
+  const openModal = (berita) => {
+    setSelectedBerita(berita);
+    setModalIsOpen(true);
+    document.body.style.overflow = "hidden"; // Menambahkan overflow: hidden pada body
+  };
+
+  const closeModal = () => {
+    setSelectedBerita(null);
+    setModalIsOpen(false);
+    document.body.style.overflow = "auto"; // Menghapus overflow: hidden pada body
+  };
+  useEffect(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    const pageBerita = beritaData.slice(startIndex, endIndex);
+    const pageImages = pageBerita.map(
+      (berita) => Images[(berita.id - 1) % imageCount]
+    );
+
+    setCurrentImages(pageImages);
+  }, [currentPage]);
 
   return (
     <div className="berita-container-full">
       <h1 style={{ marginTop: "100px" }}>Berita Terbaru</h1>
       <div className="berita-card-container">
         {beritaChunks.map((berita, idx) => (
-          <Link to={`/berita`} key={berita.id} className="berita-link">
-            <div className="berita-card" key={berita.id}>
-              <img
-                style={{ width: "350px", height: "300px" }}
-                src={currentImages[idx % imageCount]}
-                alt={berita.judul}
-              />
-              <h2>{berita.judul}</h2>
-              <p>{berita.isi}</p>
-            </div>
-          </Link>
+          <div
+            className="berita-card"
+            key={berita.id}
+            onClick={() => openModal(berita)}
+          >
+            <img
+              style={{ width: "350px", height: "300px" }}
+              src={currentImages[idx % imageCount]}
+              alt={berita.judul}
+            />
+            <h2>{berita.judul}</h2>
+            <p>{berita.isi}</p>
+          </div>
         ))}
       </div>
       <div className="pagination">
@@ -215,6 +224,33 @@ const BeritaScreen = () => {
           Next
         </button>
       </div>
+      {selectedBerita && (
+        <Modal
+          show={modalIsOpen}
+          onHide={closeModal}
+          dialogClassName="modal-container"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title style={{ textAlign: "center", fontWeight: "bold" }}>
+              {selectedBerita.judul}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <img
+              src={Images[(selectedBerita.id - 1) % imageCount]}
+              alt={selectedBerita.judul}
+              style={{ width: "100%", maxHeight: "300px", borderRadius: "8px" }}
+            />
+            <p>{selectedBerita.isi}</p>
+            {selectedBerita.detailBerita && (
+              <div className="detail-box">
+                <h3>Detail Berita</h3>
+                <p>{selectedBerita.detailBerita}</p>
+              </div>
+            )}
+          </Modal.Body>
+        </Modal>
+      )}
     </div>
   );
 };
