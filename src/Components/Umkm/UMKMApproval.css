@@ -116,30 +116,70 @@
     margin-right: 5px;
 }
 
-.pagination {
+.pagination-umkm {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.prev-button,
-.next-button {
-    padding: 8px 16px;
+/* Styling untuk tombol "Next" dan "Previous" di UMKMApproval */
+.prev-button-umkm,
+.next-button-umkm {
     border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: transparent;
     margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    padding: 8px 12px;
+    /* Menambahkan padding untuk tombol */
     border-radius: 4px;
-    font-family: 'Arial', sans-serif;
+    /* Menggunakan border-radius untuk sudut tombol */
+    color: #333;
+    /* Warna teks default */
 }
 
-.prev-button:disabled,
-.next-button:disabled {
-    background-color: #ccc;
+.prev-button-umkm,
+.next-button-umkm {
+    border: none;
+    background-color: transparent;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 8px 12px;
+    /* Menambahkan padding untuk tombol */
+    border-radius: 4px;
+    /* Menggunakan border-radius untuk sudut tombol */
+    color: #555;
+    /* Warna teks default */
+}
+
+.prev-button-umkm:disabled,
+.next-button-umkm:disabled {
+    background-color: #ddd;
+    /* Warna latar belakang abu-abu saat tombol dinonaktifkan */
+    color: #999;
+    /* Warna teks saat tombol dinonaktifkan */
     cursor: not-allowed;
+    /* Kursor dinonaktifkan saat tombol dinonaktifkan */
 }
 
-.prev-button:hover,
-.next-button:hover {
+.prev-button-umkm {
+    background-color: #808080;
+    /* Warna latar belakang coklat untuk tombol "Previous" */
+}
+
+.next-button-umkm {
+    background-color: #808080;
+    /* Warna latar belakang abu-abu untuk tombol "Next" */
+}
+
+.prev-button-umkm:hover,
+.next-button-umkm:hover {
+    background-color: #b47653;
+    /* Warna latar belakang coklat yang lebih terang saat tombol dihover */
+    color: #fff;
+    /* Warna teks saat tombol dihover */
     filter: brightness(90%);
 }

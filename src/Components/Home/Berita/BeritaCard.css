@@ -70,23 +70,32 @@ h1 {
     color: inherit;
 }
 
-/* Styling untuk pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination button {
+/* Styling untuk tombol "Next" dan "Previous" */
+.berita-pagination-button {
     border: none;
     background-color: transparent;
     margin: 0 5px;
     font-size: 16px;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
+    padding: 8px 12px;
+    /* Menambahkan padding untuk tombol */
+    border-radius: 4px;
+    /* Menggunakan border-radius untuk sudut tombol */
+    color: #333;
+    /* Warna teks default */
 }
 
-.pagination button.active {
-    font-weight: bold;
-    color: #333;
+.berita-pagination-button:hover {
+    background-color: #eee;
+    /* Warna latar belakang saat hover */
+    color: #555;
+    /* Warna teks saat hover */
+}
+
+.berita-pagination-button:disabled {
+    color: #999;
+    /* Warna untuk tombol dinonaktifkan */
+    cursor: not-allowed;
+    /* Kursor dinonaktifkan saat tombol dinonaktifkan */
 }

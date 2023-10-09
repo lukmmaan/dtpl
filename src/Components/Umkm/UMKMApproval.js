@@ -147,16 +147,16 @@ const UMKMApproval = () => {
         ))}
       </div>
       {!searching && (
-        <div className="pagination">
+        <div className="pagination-umkm">
           <button
-            className="prev-button"
+            className="prev-button-umkm"
             onClick={prevPage}
             disabled={currentPage === 1}
           >
             Previous
           </button>
           <button
-            className="next-button"
+            className="next-button-umkm"
             onClick={nextPage}
             disabled={currentPage === umkmChunks.length}
           >
