@@ -12,7 +12,7 @@
 
 /* Styling untuk berita-card-container */
 .berita-card-container {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
