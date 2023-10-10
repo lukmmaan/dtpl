@@ -9,6 +9,7 @@ import { API_URL } from "../../Constants/Api";
 import "./RequestSurat.css";
 
 const RequestSurat = ({ user }) => {
+  const [file, uploadFile] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
     email: user.email,
@@ -21,6 +22,11 @@ const RequestSurat = ({ user }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
+  const handleFileUpload = (event) => {
+    const selectedFile = event.target.files[0];
+    uploadFile(selectedFile);
+    // Lakukan sesuatu dengan berkas yang diunggah (misalnya, mengirimkannya ke server)
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -100,6 +106,16 @@ const RequestSurat = ({ user }) => {
             name="nik"
             value={formData.nik}
             onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="nik">Dokumen Pendukung</label>
+          <input
+            type="file"
+            id="file"
+            name="file"
+            onChange={handleFileUpload}
             required
           />
         </div>
