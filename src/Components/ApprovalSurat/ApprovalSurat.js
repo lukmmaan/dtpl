@@ -139,7 +139,7 @@ const ApprovalSurat = ({ user }) => {
                       (e.target.style.backgroundColor = "#8B4513")
                     }
                   >
-                    disini
+                    Download Here
                   </a>
                 </p>
               </td>
