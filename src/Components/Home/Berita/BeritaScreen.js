@@ -190,7 +190,7 @@ const BeritaScreen = () => {
 
   return (
     <div className="berita-container-full">
-      <h1 style={{ marginTop: "100px" }}>Berita Terbaru</h1>
+      <h1 style={{ marginTop: "10px" }}>Berita Terbaru</h1>
       <div className="berita-card-container">
         {beritaChunks.map((berita, idx) => (
           <div
