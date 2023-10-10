@@ -147,7 +147,7 @@ const beritaData = [
 ];
 
 const BeritaScreen = () => {
-  const itemsPerPage = 4;
+  const itemsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(beritaData.length / itemsPerPage);
 
