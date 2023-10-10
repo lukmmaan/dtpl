@@ -39,7 +39,7 @@ const Keuangan = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container" style={{ marginTop: "110px" }}>
       <h1>Laporan Keuangan Desa Manud Jaya 2023</h1>
 
       <div className="section-menu">
