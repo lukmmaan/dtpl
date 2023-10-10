@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { Umkm2 } from "../../Assets/Image/index";
-import DataUmkm from "./DataUmkm";
 import "./UMKMDetail.css";
+import Axios from "axios";
+import { API_URL } from "../../Constants/Api";
 
 const UMKMDetail = () => {
+  const [umkm, setUmkm] = useState([]);
   const { id } = useParams();
-  const umkm = DataUmkm.find((umkm) => umkm.id === parseInt(id, 10));
 
-  if (!umkm) {
-    return <div className="umkm-detail-container">UMKM tidak ditemukan</div>;
-  }
+  useEffect(() => {
+    Axios.get(`${API_URL}/umkm/${id}`)
+      .then((response) => {
+        const dataUmkm = response.data;
 
-  return (
+        setUmkm(dataUmkm);
+        console.log(dataUmkm, response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  return umkm.length !== 0 ? (
     <div className="umkm-detail-container">
       <h1>{umkm.nama}</h1>
       <img src={Umkm2} alt={Umkm2} className="umkm-detail-image" />
@@ -129,6 +139,8 @@ const UMKMDetail = () => {
         </tbody>
       </table>
     </div>
+  ) : (
+    <div className="umkm-detail-container">UMKM tidak ditemukan</div>
   );
 };
 

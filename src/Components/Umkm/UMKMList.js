@@ -1,22 +1,36 @@
 // UMKMList.js
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
 import { connect } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import swal from "sweetalert2";
 
-import DataUmkm from "./DataUmkm";
 import { Umkm } from "../../Assets/Image/index";
 import "./UMKMList.css";
+import { API_URL } from "../../Constants/Api";
 
 const UMKMList = ({ user }) => {
   const navigate = useNavigate();
+  const [DataUmkm, setDataUmkm] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState(""); // State untuk penyimpanan kata kunci pencarian
   const itemsPerPage = 5;
-  const maxPagesToShow = 10;
   const [searchResults, setSearchResults] = useState([]); // State untuk penyimpanan hasil pencarian
   const [isSearching, setIsSearching] = useState(false); // State untuk mengindikasikan apakah sedang dalam proses pencarian
+
+  useEffect(() => {
+    Axios.get(`${API_URL}/umkm?status=approved`)
+      .then((response) => {
+        const dataUmkm = response.data;
+
+        setDataUmkm(dataUmkm);
+        console.log(dataUmkm, response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const handleDaftarUmkmClick = () => {
     if (user && user.role === "") {
@@ -76,7 +90,7 @@ const UMKMList = ({ user }) => {
                       smooth: "easeInOutQuart",
                     });
                   }}
-                  to={`/umkm/${umkm.id}`}
+                  to={`/umkm/${umkm._id}`}
                   className="umkm-link"
                 >
                   <img src={Umkm} alt={umkm.nama} className="umkm-image" />
@@ -103,7 +117,7 @@ const UMKMList = ({ user }) => {
                       smooth: "easeInOutQuart",
                     });
                   }}
-                  to={`/umkm/${umkm.id}`}
+                  to={`/umkm/${umkm._id}`}
                   className="umkm-link"
                 >
                   <img src={Umkm} alt={umkm.nama} className="umkm-image" />
