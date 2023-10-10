@@ -90,7 +90,7 @@ const Navbar = ({ user }) => {
             Administrasi
           </Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link
             onClick={() => {
               scroll.scrollToTop({
@@ -155,7 +155,7 @@ const Navbar = ({ user }) => {
               </Link>
             </div>
           </div>
-        </li>
+        </li> */}
       </ul>
       <div className="login-section">
         {user && user.fullName ? (
