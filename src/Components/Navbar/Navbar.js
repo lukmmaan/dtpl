@@ -90,20 +90,6 @@ const Navbar = ({ user }) => {
             Administrasi
           </Link>
         </li>
-        {/* <li className="nav-item">
-          <Link
-            onClick={() => {
-              scroll.scrollToTop({
-                duration: 100, // Durasi animasi dalam milidetik
-                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
-              });
-            }}
-            to="/umkm-list"
-            className="nav-link"
-          >
-            Usaha Desa
-          </Link>
-        </li>
         <li className="nav-item">
           <Link
             onClick={() => {
@@ -116,6 +102,20 @@ const Navbar = ({ user }) => {
             className="nav-link"
           >
             About Us
+          </Link>
+        </li>
+        {/* <li className="nav-item">
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100, // Durasi animasi dalam milidetik
+                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+              });
+            }}
+            to="/umkm-list"
+            className="nav-link"
+          >
+            Usaha Desa
           </Link>
         </li>
         <li className="nav-item dropdown">
