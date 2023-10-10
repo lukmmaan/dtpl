@@ -98,13 +98,13 @@ const Navbar = ({ user }) => {
                 smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
               });
             }}
-            to="/contact"
+            to="/umkm-list"
             className="nav-link"
           >
-            About Us
+            Usaha Desa
           </Link>
         </li>
-        {/* <li className="nav-item">
+        <li className="nav-item">
           <Link
             onClick={() => {
               scroll.scrollToTop({
@@ -112,10 +112,10 @@ const Navbar = ({ user }) => {
                 smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
               });
             }}
-            to="/umkm-list"
+            to="/contact"
             className="nav-link"
           >
-            Usaha Desa
+            About Us
           </Link>
         </li>
         <li className="nav-item dropdown">
@@ -155,7 +155,7 @@ const Navbar = ({ user }) => {
               </Link>
             </div>
           </div>
-        </li> */}
+        </li>
       </ul>
       <div className="login-section">
         {user && user.fullName ? (
