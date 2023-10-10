@@ -6,7 +6,7 @@ import { connect, useDispatch } from "react-redux";
 import Cookies from "universal-cookie";
 
 import { clearUser } from "../../redux/reducers/userActions";
-import { IconDesa } from "../../Assets/Image/index";
+import { Ui } from "../../Assets/Image/index";
 
 import "./Navbar.css";
 
@@ -52,7 +52,14 @@ const Navbar = ({ user }) => {
 
   return (
     <nav className={`navbar ${menuOpen ? "active" : ""}`}>
-      <img src={IconDesa} alt="IconDesa" className="icon-image" />
+      <div style={{ display: "flex", flex: 1, alignItems: "center" }}>
+        <img src={Ui} alt="Ui" className="icon-image" />
+        <p
+          style={{ marginLeft: "10px", fontWeight: "bold", fontSize: "1.2rem" }}
+        >
+          Desa Manud Jaya
+        </p>
+      </div>
       <div className="menu-icon" onClick={toggleMenu}></div>
       <ul className={`nav-list ${menuOpen ? "active" : ""}`}>
         <li className="nav-item">

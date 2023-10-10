@@ -26,3 +26,4 @@ export const News5 = require("./news5.jpg");
 export const News6 = require("./news6.jpg");
 export const News7 = require("./news7.jpg");
 export const News8 = require("./news8.jpg");
+export const Ui = require("./ui.png");
