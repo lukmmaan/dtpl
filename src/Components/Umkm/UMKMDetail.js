@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { Umkm2 } from "../../Assets/Image/index";
 import "./UMKMDetail.css";
 import Axios from "axios";
 import { API_URL } from "../../Constants/Api";
+import Swal from "sweetalert2";
 
 const UMKMDetail = () => {
   const [umkm, setUmkm] = useState([]);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     Axios.get(`${API_URL}/umkm/${id}`)
@@ -138,10 +142,40 @@ const UMKMDetail = () => {
           </tr>
         </tbody>
       </table>
+      <button
+        className="decline-button"
+        onClick={() =>
+          Swal.fire({
+            title: "Yakin ingin delete umkm ini?",
+            text: "Anda akan menghapus data umkm ini",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "green",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya, Selesai",
+            cancelButtonText: "Batal",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                icon: "success",
+                title: "UMKM telah dihapus",
+                text: "Terima kasih atas kontribusi Anda!",
+              });
+              navigate("/umkm-list");
+            }
+          })
+        }
+      ></button>
     </div>
   ) : (
     <div className="umkm-detail-container">UMKM tidak ditemukan</div>
   );
 };
 
-export default UMKMDetail;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user.user,
+  };
+};
+
+export default connect(mapStateToProps)(UMKMDetail);
