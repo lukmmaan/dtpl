@@ -49,14 +49,6 @@ const AppRouter = ({ user }) => {
           }
         />
         <Route
-          path="/list-pengaduan"
-          element={
-            <Layout>
-              <DesaPengaduanList />
-            </Layout>
-          }
-        />
-        <Route
           path="/umkm-list"
           element={
             <Layout>
@@ -167,14 +159,6 @@ const AppRouter = ({ user }) => {
               }
             />
             <Route
-              path="/approval-surat"
-              element={
-                <Layout>
-                  <ApprovalSurat />
-                </Layout>
-              }
-            />
-            <Route
               path="/status-surat"
               element={
                 <Layout>
@@ -199,6 +183,26 @@ const AppRouter = ({ user }) => {
                   </Layout>
                 }
               />
+            )}
+            {user.role !== "user" && (
+              <>
+                <Route
+                  path="/approval-surat"
+                  element={
+                    <Layout>
+                      <ApprovalSurat />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/list-pengaduan"
+                  element={
+                    <Layout>
+                      <DesaPengaduanList />
+                    </Layout>
+                  }
+                />
+              </>
             )}
             {user.role === "kepalaDesa" && (
               <Route

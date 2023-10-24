@@ -140,20 +140,22 @@ const Navbar = ({ user }) => {
                 Lap. Keuangan
               </Link>
             </div>
-            <div className="dropdown-item">
-              <Link
-                onClick={() => {
-                  scroll.scrollToTop({
-                    duration: 100, // Durasi animasi dalam milidetik
-                    smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
-                  });
-                }}
-                to="/pengaduan"
-                className="dropdown-link"
-              >
-                Pengaduan
-              </Link>
-            </div>
+            {user.role && (
+              <div className="dropdown-item">
+                <Link
+                  onClick={() => {
+                    scroll.scrollToTop({
+                      duration: 100, // Durasi animasi dalam milidetik
+                      smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                    });
+                  }}
+                  to={user.role === "user" ? "/pengaduan" : "/list-pengaduan"}
+                  className="dropdown-link"
+                >
+                  Pengaduan
+                </Link>
+              </div>
+            )}
           </div>
         </li>
       </ul>

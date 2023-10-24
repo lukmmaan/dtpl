@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { connect } from "react-redux";
 
 import "./Pengaduan.css";
 
-const Pengaduan = () => {
+const Pengaduan = ({ user }) => {
   const [nama, setNama] = useState("");
   const [alamat, setAlamat] = useState("");
   const [pengaduan, setPengaduan] = useState("");
@@ -37,6 +38,7 @@ const Pengaduan = () => {
           //   lokasiKejadian,
           //   prioritas,
           //   kategori,
+          //   user.email
           // });
           Swal.fire({
             icon: "success",
@@ -119,4 +121,10 @@ const Pengaduan = () => {
   );
 };
 
-export default Pengaduan;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user.user,
+  };
+};
+
+export default connect(mapStateToProps)(Pengaduan);
