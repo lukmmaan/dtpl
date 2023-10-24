@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
 import "./InputUmkm.css";
 
 const InputUmkm = () => {
@@ -151,6 +153,8 @@ const InputUmkm = () => {
       text: "Data UMKM berhasil disubmit.",
       icon: "success",
     });
+    const navigate = useNavigate();
+    navigate("/umkm-list")
     // onAddUmkm(umkm);
     // Reset the form after submission
     // setUmkm({
