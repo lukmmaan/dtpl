@@ -9,7 +9,7 @@ import Axios from "axios";
 import { API_URL } from "../../Constants/Api";
 import Swal from "sweetalert2";
 
-const UMKMDetail = ({}) => {
+const UMKMDetail = ({user}) => {
   const [umkm, setUmkm] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
