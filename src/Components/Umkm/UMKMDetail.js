@@ -9,7 +9,7 @@ import Axios from "axios";
 import { API_URL } from "../../Constants/Api";
 import Swal from "sweetalert2";
 
-const UMKMDetail = ({user}) => {
+const UMKMDetail = ({ user }) => {
   const [umkm, setUmkm] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -144,6 +144,7 @@ const UMKMDetail = ({user}) => {
       </table>
       {user.role === "kepalaDesa" && (
         <button
+          style={{ marginTop: "10px" }}
           className="decline-button"
           onClick={() =>
             Swal.fire({
@@ -166,7 +167,9 @@ const UMKMDetail = ({user}) => {
               }
             })
           }
-        >Hapus UMKM</button>
+        >
+          Hapus UMKM
+        </button>
       )}
     </div>
   ) : (
