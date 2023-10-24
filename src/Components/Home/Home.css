@@ -85,15 +85,3 @@
   border: none;
   border-radius: 4px;
 }
-
-.container-rumah {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  margin-top: 100px;
-  height: 100vh;
-}
-
-.section-rumah {
-  height: 100vh;
-  scroll-snap-align: start;
-}

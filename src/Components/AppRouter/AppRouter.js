@@ -30,6 +30,7 @@ import UMKMDetail from "../Umkm/UMKMDetail";
 import InputUmkm from "../InputUmkm/InputUmkm";
 import UMKMApproval from "../Umkm/UMKMApproval";
 import DestinasiDetail from "../DestinasiDetail/DestinasiDetail";
+import DesaPengaduanList from "../DesaPengaduanList/DesaPengaduanList";
 
 const AppRouter = ({ user }) => {
   const location = useLocation();
@@ -44,6 +45,14 @@ const AppRouter = ({ user }) => {
           element={
             <Layout>
               <BlankPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/list-pengaduan"
+          element={
+            <Layout>
+              <DesaPengaduanList />
             </Layout>
           }
         />

@@ -190,7 +190,7 @@ const BeritaScreen = () => {
 
   return (
     <div className="berita-container-full">
-      <h1 style={{ marginTop: "70px" }}>Berita Terbaru</h1>
+      <h1 style={{ marginTop: "150px" }}>Berita Terbaru</h1>
       <div className="berita-card-container">
         {beritaChunks.map((berita, idx) => (
           <div
@@ -213,41 +213,43 @@ const BeritaScreen = () => {
           className={`berita-pagination-button`}
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-        >
-          Previous
-        </button>
+        ></button>
         <button
           className={`berita-pagination-button`}
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-        >
-          Next
-        </button>
+        ></button>
       </div>
       {selectedBerita && (
         <Modal
           show={modalIsOpen}
           onHide={closeModal}
+          style={{ width: "100%" }}
           dialogClassName="modal-container"
-          >
+        >
           <Modal.Header closeButton>
-            <Modal.Title style={{ textAlign: "center", fontWeight: "bold" }}>
-              {selectedBerita.judul}
-            </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <img
-              src={Images[(selectedBerita.id - 1) % imageCount]}
-              alt={selectedBerita.judul}
-              style={{ width: "100%", maxHeight: "300px", borderRadius: "8px" }}
-            />
-            <p>{selectedBerita.isi}</p>
-            {selectedBerita.detailBerita && (
-              <div className="detail-box">
-                <h3>Detail Berita</h3>
-                <p>{selectedBerita.detailBerita}</p>
-              </div>
-            )}
+          <Modal.Body className="modal-body">
+            <div className="modal-image" style={{ width: "500px" }}>
+              <img
+                src={Images[(selectedBerita.id - 1) % imageCount]}
+                alt={selectedBerita.judul}
+              />
+              <p style={{ textAlign: "start", marginTop: "30px" }}>
+                {selectedBerita.isi}
+              </p>
+            </div>
+            <div
+              className="modal-details"
+              style={{ width: "500px", marginTop: "30px" }}
+            >
+              {selectedBerita.detailBerita && (
+                <div className="detail-box">
+                  <h3>{selectedBerita.judul}</h3>
+                  <p>{selectedBerita.detailBerita}</p>
+                </div>
+              )}
+            </div>
           </Modal.Body>
         </Modal>
       )}
