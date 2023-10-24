@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./InputUmkm.css";
 
 const InputUmkm = () => {
+  const navigate = useNavigate();
   const [umkm, setUmkm] = useState({
     id: "",
     nama: "",
@@ -153,8 +154,7 @@ const InputUmkm = () => {
       text: "Data UMKM berhasil disubmit.",
       icon: "success",
     });
-    const navigate = useNavigate();
-    navigate("/umkm-list")
+    navigate("/umkm-list");
     // onAddUmkm(umkm);
     // Reset the form after submission
     // setUmkm({
