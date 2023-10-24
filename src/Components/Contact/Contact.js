@@ -4,6 +4,7 @@ import React from "react";
 import { GoogleMap } from "../../Assets/Image/index";
 import "./Contact.css";
 import ProgramDesa from "../ProgramDesa/ProgramDesa";
+import KebijakanDesa from "../KebijakanDesa/KebijakanDesa";
 
 const Contact = () => {
   return (
@@ -44,6 +45,7 @@ const Contact = () => {
       </div>
       <div>
         <ProgramDesa />
+        <KebijakanDesa />
       </div>
     </div>
   );

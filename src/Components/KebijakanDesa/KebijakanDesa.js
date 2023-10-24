@@ -1,10 +1,9 @@
 import React, { useState } from "react";
+import "./KebijakanDesa.css";
+import { KebijakanDesaData } from "./KebijakanDesaData";
+import { Orang2 } from "../../Assets/Image";
 
-import "./ProgramDesa.css";
-import { ProgramDesaData } from "./ProgramDesaData";
-import { Orang1, Orang2 } from "../../Assets/Image/index";
-
-const ProgramDesa = () => {
+const KebijakanDesa = () => {
   const [enlargedCardIndex, setEnlargedCardIndex] = useState(null);
   const itemsPerPage = 4;
   const [startIndex, setStartIndex] = useState(0);
@@ -18,7 +17,7 @@ const ProgramDesa = () => {
   };
 
   const handleNextClick = () => {
-    if (startIndex + itemsPerPage < ProgramDesaData.length) {
+    if (startIndex + itemsPerPage < KebijakanDesaData.length) {
       setEnlargedCardIndex(null);
       setStartIndex(startIndex + itemsPerPage); // Perbarui startIndex untuk halaman berikutnya
     }
@@ -34,41 +33,38 @@ const ProgramDesa = () => {
   return (
     <div>
       <div
-        className="card-carousel-container"
+        className="card-carousel-container-card"
         style={{
           borderTop: "4px solid grey",
+          //   borderBottom: "4px solid grey",
           marginLeft: "100px",
           marginRight: "100px",
         }}
       >
-        <div>
-          <h2 style={{ color: "grey" }}>Program Desa</h2>
-        </div>
-        {ProgramDesaData.slice(startIndex, startIndex + itemsPerPage).map(
+        {KebijakanDesaData.slice(startIndex, startIndex + itemsPerPage).map(
           (item, index) => (
             <div
               key={item.id}
-              className={`carousel-card ${
+              className={`carousel-card-item ${
                 enlargedCardIndex === index ? "active" : ""
               }`}
               onClick={() => handleCardClick(index)}
             >
               <div className="carousel-content">
-                <h3 className="card-title">{item.nama_program}</h3>
+                <h3 className="card-title">{item.nama_kebijakan}</h3>
                 <img
-                  src={Orang1}
+                  src={Orang2}
                   alt={item.nama_program}
                   style={{ width: "100%", height: "200px", objectFit: "cover" }}
                 />
                 <p className="card-text">{item.deskripsi}</p>
-                <p className="card-text">Lokasi: {item.lokasi}</p>
-                <p className="card-text">
-                  Tanggal Pelaksanaan: {item.tanggal_pelaksanaan}
-                </p>
               </div>
             </div>
           )
         )}
+        <div>
+          <h2 style={{ color: "grey" }}>Kebijakan Desa</h2>
+        </div>
       </div>
       <div className="pagination" style={{ marginBottom: "30px" }}>
         <button
@@ -79,11 +75,11 @@ const ProgramDesa = () => {
         <button
           onClick={handleNextClick}
           style={{ width: "60px", height: "5px" }}
-          disabled={startIndex + itemsPerPage >= ProgramDesaData.length}
+          disabled={startIndex + itemsPerPage >= KebijakanDesaData.length}
         ></button>
       </div>
     </div>
   );
 };
 
-export default ProgramDesa;
+export default KebijakanDesa;
