@@ -196,6 +196,7 @@ const BeritaScreen = () => {
           <div
             className="berita-card"
             key={berita.id}
+            style={{ cursor: "pointer" }}
             onClick={() => openModal(berita)}
           >
             <img
