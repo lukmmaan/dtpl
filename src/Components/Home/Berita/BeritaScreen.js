@@ -199,7 +199,7 @@ const BeritaScreen = () => {
             onClick={() => openModal(berita)}
           >
             <img
-              style={{ width: "350px", height: "300px" }}
+              style={{ width: "350px", height: "300px", objectFit: "cover" }}
               src={currentImages[idx % imageCount]}
               alt={berita.judul}
             />
@@ -227,13 +227,13 @@ const BeritaScreen = () => {
           style={{ width: "100%" }}
           dialogClassName="modal-container"
         >
-          <Modal.Header closeButton>
-          </Modal.Header>
+          <Modal.Header closeButton></Modal.Header>
           <Modal.Body className="modal-body">
             <div className="modal-image" style={{ width: "500px" }}>
               <img
                 src={Images[(selectedBerita.id - 1) % imageCount]}
                 alt={selectedBerita.judul}
+                style={{ objectFit: "cover" }}
               />
               <p style={{ textAlign: "start", marginTop: "30px" }}>
                 {selectedBerita.isi}
