@@ -105,7 +105,7 @@ export const ProgramDesaData = [
   },
   {
     id: 14,
-    nama_program: "Pengembangan Ekowisata",
+    nama_program: "Pengembangan Ekowisata Manud Jaya",
     deskripsi:
       "Mengembangkan ekowisata di Desa Indah Alam, Trawas, Mojokerto, Jatim.",
     lokasi: "Desa Indah Alam, Trawas, Mojokerto, Jatim",
