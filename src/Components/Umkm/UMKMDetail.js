@@ -166,7 +166,7 @@ const UMKMDetail = ({user}) => {
               }
             })
           }
-        ></button>
+        >Hapus UMKM</button>
       )}
     </div>
   ) : (
