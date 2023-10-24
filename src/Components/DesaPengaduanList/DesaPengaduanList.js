@@ -70,13 +70,8 @@ class DesaPengaduanList extends Component {
                 <td>
                   {pengaduan.status !== "done" ? (
                     <>
-                      <input
-                        type="checkbox"
-                        placeholder="Respon terhadap pengaduan"
-                      ></input>
                       <button
                         style={{
-                          marginLeft: "30px",
                           backgroundColor: "chocolate",
                           width: "80px",
                           height: "30px",
