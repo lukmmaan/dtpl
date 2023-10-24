@@ -163,7 +163,7 @@ const UMKMList = ({ user }) => {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Cari UMKM apaan bang?"
+          placeholder="Search UMKM ?"
           value={searchTerm}
           onChange={handleSearch}
           className="custom-search-bar"

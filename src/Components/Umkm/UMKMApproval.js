@@ -107,7 +107,7 @@ const UMKMApproval = () => {
       <div className="search-container">
         <input
           type="text"
-          placeholder="Cari UMKM apaan bang ?"
+          placeholder="Search UMKM ?"
           value={searchKeyword}
           onChange={(e) => setSearchKeywordActive(e.target.value)}
         />
