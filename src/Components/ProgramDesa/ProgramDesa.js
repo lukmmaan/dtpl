@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ProgramDesa.css";
 import { ProgramDesaData } from "./ProgramDesaData";
-import { Orang1, Orang2 } from "../../Assets/Image/index";
+import { Orang1 } from "../../Assets/Image/index";
 
 const ProgramDesa = () => {
   const [enlargedCardIndex, setEnlargedCardIndex] = useState(null);
