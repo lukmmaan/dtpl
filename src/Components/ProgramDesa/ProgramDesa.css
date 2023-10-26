@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: 650px;
     /* height: 100vh; */
     overflow: hidden;
 }
@@ -12,7 +12,7 @@
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    height: 490px;
+    height: 550px;
     margin: 10px;
     border-radius: 5px;
     transition: transform 0.5s, height 0.5s;
@@ -24,7 +24,7 @@
 .carousel-card.active {
     transform: scale(1.1);
     /* Kartu membesar saat aktif */
-    height: 490px;
+    height: 550px;
     /* Tinggi lebih besar saat kartu aktif */
     opacity: 1;
 }

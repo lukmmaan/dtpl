@@ -29,8 +29,16 @@ const UMKMDetail = ({ user }) => {
 
   return umkm.length !== 0 ? (
     <div className="umkm-detail-container">
-      <h1>{umkm.nama}</h1>
-      <img src={Umkm2} alt={Umkm2} className="umkm-detail-image" />
+      <div
+        style={{
+          border: "20px white solid",
+          width: "100%",
+          borderRadius: "32px",
+        }}
+      >
+        <h1 style={{ fontSize: "60px" }}>{umkm.nama}</h1>
+        <img src={Umkm2} alt={Umkm2} className="umkm-detail-image" />
+      </div>
       <table className="umkm-table">
         <tbody>
           <tr>
