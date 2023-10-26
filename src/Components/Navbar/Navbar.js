@@ -140,7 +140,7 @@ const Navbar = ({ user }) => {
                 Lap. Keuangan
               </Link>
             </div>
-            {user.role && (
+            {/* {user.role && (
               <div className="dropdown-item">
                 <Link
                   onClick={() => {
@@ -155,7 +155,7 @@ const Navbar = ({ user }) => {
                   Pengaduan
                 </Link>
               </div>
-            )}
+            )} */}
           </div>
         </li>
       </ul>
