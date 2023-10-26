@@ -31,9 +31,9 @@ const UMKMDetail = ({ user }) => {
     <div className="umkm-detail-container">
       <div
         style={{
-          border: "20px white solid",
+          borderBottom: "20px white solid",
           width: "100%",
-          borderRadius: "32px",
+          borderRadius: "10px",
         }}
       >
         <h1 style={{ fontSize: "60px" }}>{umkm.nama}</h1>
