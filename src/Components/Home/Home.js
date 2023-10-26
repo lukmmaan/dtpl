@@ -31,9 +31,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <section className="section-rumah">
+      <section className="section-rumah">
         <DestinasiCarousel />
-      </section> */}
+      </section>
       <section className="section-rumah">
         <BeritaScreen />
       </section>
