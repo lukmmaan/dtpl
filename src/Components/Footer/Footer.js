@@ -12,7 +12,7 @@ const Footer = () => {
           <p>Budaya & Keindahan Alam Kami</p>
         </div>
         <div className="footer-info">
-          <p>DTPL SCRUM - 2022 FC</p> <hr /> <br />
+          <h2>DTPL SCRUM - 2022 FC</h2> <hr /> <br />
           <p>PO : Achmad Firmansyah Sulaeman ( 2206137391)</p>
           <p>SM : Jihan Nur Ramdhani (2206137776)</p>
           <p>FE : Lukman Yudokusumo (2206137813)</p>
@@ -21,20 +21,6 @@ const Footer = () => {
           <p>QA : Krisna Maria Rosita Dewi (2206019865)</p>
           {/* </p> */}
         </div>
-        {/* <div className="footer-social">
-          <h3>Temui Kami di Sosial Media</h3>
-          <div className="social-icons">
-            <a href="#" className="social-icon">
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="#" className="social-icon">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="social-icon">
-              <i className="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div> */}
       </div>
       <div className="footer-bottom">
         <p>&copy; 2023 Desa Manud Jaya. Hak Cipta Dilindungi.</p>
