@@ -155,6 +155,24 @@ const Navbar = ({ user }) => {
                   Pengaduan
                 </Link>
               </div>
+          
+            )}
+             {user.role && user.role !== "user" && (
+              <div className="dropdown-item">
+                <Link
+                  onClick={() => {
+                    scroll.scrollToTop({
+                      duration: 100, // Durasi animasi dalam milidetik
+                      smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                    });
+                  }}
+                  to={"/adminDestinasi"}
+                  className="dropdown-link"
+                >
+                  Admin Destinasi
+                </Link>
+              </div>
+          
             )}
           </div>
         </li>

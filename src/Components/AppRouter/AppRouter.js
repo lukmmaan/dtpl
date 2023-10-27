@@ -26,6 +26,8 @@ import InputUmkm from "../InputUmkm/InputUmkm";
 import UMKMApproval from "../Umkm/UMKMApproval";
 import DestinasiDetail from "../DestinasiDetail/DestinasiDetail";
 import DesaPengaduanList from "../DesaPengaduanList/DesaPengaduanList";
+import AdminDestinasi from "../AdminDestinasi/AdminDestinasi";
+import DestinasiTambah from "../DestinasiTambah/DestinasiTambah";
 
 const AppRouter = ({ user }) => {
   return (
@@ -190,6 +192,22 @@ const AppRouter = ({ user }) => {
                   element={
                     <Layout>
                       <DesaPengaduanList />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/adminDestinasi"
+                  element={
+                    <Layout>
+                      <AdminDestinasi />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/destinasiTambah"
+                  element={
+                    <Layout>
+                      <DestinasiTambah />
                     </Layout>
                   }
                 />
