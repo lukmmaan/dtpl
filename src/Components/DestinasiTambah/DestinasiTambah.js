@@ -145,9 +145,10 @@ export default function DestinasiTambah() {
   };
 
   const handleSubmit = (e) => {
+    let existingData = JSON.parse(localStorage.getItem("newWisata")) || [];
     e.preventDefault();
     console.log("Form submitted:", formData);
-    
+
     Swal.fire({
       title: "Yakin ingin data sudah benar?",
       text: `Anda akan menambahkan destinasi wisata`,
@@ -164,11 +165,12 @@ export default function DestinasiTambah() {
           title: "Wisata telah ditambahkan",
           text: "Terima kasih atas kontribusi Anda!",
         });
-        localStorage.setItem('newWisata',JSON.stringify(formData))
+        existingData.push(formData);
+        localStorage.setItem("newWisata", JSON.stringify(existingData));
         navigate("/adminDestinasi", { replace: true });
       }
     });
-   
+
     setFileUrl();
     setFormData({
       nama: "",
