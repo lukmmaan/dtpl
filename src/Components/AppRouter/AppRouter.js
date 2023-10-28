@@ -28,6 +28,8 @@ import DestinasiDetail from "../DestinasiDetail/DestinasiDetail";
 import DesaPengaduanList from "../DesaPengaduanList/DesaPengaduanList";
 import AdminDestinasi from "../AdminDestinasi/AdminDestinasi";
 import DestinasiTambah from "../DestinasiTambah/DestinasiTambah";
+import AdminDestinasiDetail from "../AdminDestinasiDetail/AdminDestinasiDetail";
+import ApprovalDestinasi from "../ApprovalDestinasi/ApprovalDestinasi";
 
 const AppRouter = ({ user }) => {
   return (
@@ -211,17 +213,35 @@ const AppRouter = ({ user }) => {
                     </Layout>
                   }
                 />
+                <Route
+                  path="/adminDestinasiDetail"
+                  element={
+                    <Layout>
+                      <AdminDestinasiDetail />
+                    </Layout>
+                  }
+                />
               </>
             )}
             {user.role === "kepalaDesa" && (
-              <Route
-                path="/umkm-approval"
-                element={
-                  <Layout>
-                    <UMKMApproval />
-                  </Layout>
-                }
-              />
+              <>
+                <Route
+                  path="/umkm-approval"
+                  element={
+                    <Layout>
+                      <UMKMApproval />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/destinasi-approval"
+                  element={
+                    <Layout>
+                      <ApprovalDestinasi />
+                    </Layout>
+                  }
+                />
+              </>
             )}
           </>
         )}

@@ -155,9 +155,8 @@ const Navbar = ({ user }) => {
                   Pengaduan
                 </Link>
               </div>
-          
             )}
-             {user.role && user.role !== "user" && (
+            {user.role && user.role !== "user" && (
               <div className="dropdown-item">
                 <Link
                   onClick={() => {
@@ -172,7 +171,22 @@ const Navbar = ({ user }) => {
                   Admin Destinasi
                 </Link>
               </div>
-          
+            )}
+            {user.role && user.role == "kepalaDesa" && (
+              <div className="dropdown-item">
+                <Link
+                  onClick={() => {
+                    scroll.scrollToTop({
+                      duration: 100, // Durasi animasi dalam milidetik
+                      smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                    });
+                  }}
+                  to={"/destinasi-approval"}
+                  className="dropdown-link"
+                >
+                  Approve Destinasi
+                </Link>
+              </div>
             )}
           </div>
         </li>
