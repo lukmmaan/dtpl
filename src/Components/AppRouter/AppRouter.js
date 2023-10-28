@@ -33,6 +33,7 @@ import DestinasiDetail from "../DestinasiDetail/DestinasiDetail";
 import DesaPengaduanList from "../DesaPengaduanList/DesaPengaduanList";
 import AdminDestinasi from "../AdminDestinasi/AdminDestinasi";
 import DestinasiTambah from "../DestinasiTambah/DestinasiTambah";
+import AdminDestinasiDetail from "../AdminDestinasiDetail/AdminDestinasiDetail";
 
 const AppRouter = ({ user }) => {
   const location = useLocation();
@@ -217,6 +218,14 @@ const AppRouter = ({ user }) => {
                   element={
                     <Layout>
                       <DestinasiTambah />
+                    </Layout>
+                  }
+                />
+                <Route
+                  path="/adminDestinasiDetail"
+                  element={
+                    <Layout>
+                      <AdminDestinasiDetail />
                     </Layout>
                   }
                 />

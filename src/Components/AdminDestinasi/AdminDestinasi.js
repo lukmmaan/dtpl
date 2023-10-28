@@ -3,9 +3,10 @@ import "./AdminDestinasi.css";
 import DestinasiData from "../DestinasiList/DestinasiData";
 import { Wisata1 } from "../../Assets/Image";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AdminDestinasi() {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -159,7 +160,14 @@ export default function AdminDestinasi() {
                     <td>{value.waktuTerbaik}</td>
                     <td>@mdo</td> */}
                     <td>
-                      <button class="btn btn-warning btn-sm">Detail</button>
+                      <button
+                        class="btn btn-warning btn-sm"
+                        onClick={() =>
+                          navigate("/adminDestinasiDetail", { state: value })
+                        }
+                      >
+                        Detail
+                      </button>
                       <button
                         class="btn btn-danger btn-sm"
                         onClick={() => {
