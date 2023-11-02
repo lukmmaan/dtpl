@@ -16,45 +16,53 @@ const Pengaduan = ({ user }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (nama && alamat && pengaduan) {
-      // Membuat pop-up konfirmasi menggunakan SweetAlert2
+    if (user.role === "" || user.role !== "user") {
       Swal.fire({
-        title: "Kirim Pengaduan?",
-        text: "Anda yakin ingin mengirimkan pengaduan ini?",
-        icon: "question",
-        showCancelButton: true,
-        confirmButtonColor: "green",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Ya, Kirim",
-        cancelButtonText: "Batal",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // console.log("Data Pengaduan:", {
-          //   nama,
-          //   alamat,
-          //   pengaduan,
-          //   nomorTelepon,
-          //   tanggalKejadian,
-          //   lokasiKejadian,
-          //   prioritas,
-          //   kategori,
-          //   user.email
-          // });
-          Swal.fire({
-            icon: "success",
-            title: "Pengaduan berhasil dikirim",
-            text: "Terima kasih atas kontribusi Anda!",
-          });
-          setNama("");
-          setAlamat("");
-          setPengaduan("");
-          setNomorTelepon("");
-          setTanggalKejadian("");
-          setLokasiKejadian("");
-          setPrioritas("Sedang");
-          setKategori("Infrastruktur");
-        }
+        icon: "error",
+        title: "Silahkan Login terlebih dahulu",
+        text: "Login untuk pengajuan pengaduan",
       });
+    } else {
+      if (nama && alamat && pengaduan) {
+        // Membuat pop-up konfirmasi menggunakan SweetAlert2
+        Swal.fire({
+          title: "Kirim Pengaduan?",
+          text: "Anda yakin ingin mengirimkan pengaduan ini?",
+          icon: "question",
+          showCancelButton: true,
+          confirmButtonColor: "green",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Ya, Kirim",
+          cancelButtonText: "Batal",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // console.log("Data Pengaduan:", {
+            // string:  nama,
+            // string:  alamat,
+            // string:  pengaduan,
+            // string:  nomorTelepon,
+            // string:  tanggalKejadian,
+            // string:  lokasiKejadian,
+            // string:  prioritas,
+            // string:  kategori,
+            // string:  user.email
+            // });
+            Swal.fire({
+              icon: "success",
+              title: "Pengaduan berhasil dikirim",
+              text: "Terima kasih atas kontribusi Anda!",
+            });
+            setNama("");
+            setAlamat("");
+            setPengaduan("");
+            setNomorTelepon("");
+            setTanggalKejadian("");
+            setLokasiKejadian("");
+            setPrioritas("Sedang");
+            setKategori("Infrastruktur");
+          }
+        });
+      }
     }
   };
 

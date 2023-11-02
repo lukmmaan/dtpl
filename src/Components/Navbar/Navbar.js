@@ -66,8 +66,8 @@ const Navbar = ({ user }) => {
           <Link
             onClick={() => {
               scroll.scrollToTop({
-                duration: 100, // Durasi animasi dalam milidetik
-                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                duration: 100,
+                smooth: "easeInOutQuart",
               });
             }}
             to="/"
@@ -80,8 +80,8 @@ const Navbar = ({ user }) => {
           <Link
             onClick={() => {
               scroll.scrollToTop({
-                duration: 100, // Durasi animasi dalam milidetik
-                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                duration: 100,
+                smooth: "easeInOutQuart",
               });
             }}
             to="/services"
@@ -94,8 +94,8 @@ const Navbar = ({ user }) => {
           <Link
             onClick={() => {
               scroll.scrollToTop({
-                duration: 100, // Durasi animasi dalam milidetik
-                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                duration: 100,
+                smooth: "easeInOutQuart",
               });
             }}
             to="/umkm-list"
@@ -108,8 +108,8 @@ const Navbar = ({ user }) => {
           <Link
             onClick={() => {
               scroll.scrollToTop({
-                duration: 100, // Durasi animasi dalam milidetik
-                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                duration: 100,
+                smooth: "easeInOutQuart",
               });
             }}
             to="/contact"
@@ -130,8 +130,8 @@ const Navbar = ({ user }) => {
               <Link
                 onClick={() => {
                   scroll.scrollToTop({
-                    duration: 100, // Durasi animasi dalam milidetik
-                    smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                    duration: 100,
+                    smooth: "easeInOutQuart",
                   });
                 }}
                 to="/keuangan"
@@ -140,29 +140,31 @@ const Navbar = ({ user }) => {
                 Lap. Keuangan
               </Link>
             </div>
-            {user.role && (
-              <div className="dropdown-item">
-                <Link
-                  onClick={() => {
-                    scroll.scrollToTop({
-                      duration: 100, // Durasi animasi dalam milidetik
-                      smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
-                    });
-                  }}
-                  to={user.role === "user" ? "/pengaduan" : "/list-pengaduan"}
-                  className="dropdown-link"
-                >
-                  Pengaduan
-                </Link>
-              </div>
-            )}
+            <div className="dropdown-item">
+              <Link
+                onClick={() => {
+                  scroll.scrollToTop({
+                    duration: 100,
+                    smooth: "easeInOutQuart",
+                  });
+                }}
+                to={
+                  user.role === "user" || user.role === ""
+                    ? "/pengaduan"
+                    : "/list-pengaduan"
+                }
+                className="dropdown-link"
+              >
+                Pengaduan
+              </Link>
+            </div>
             {user.role && user.role !== "user" && (
               <div className="dropdown-item">
                 <Link
                   onClick={() => {
                     scroll.scrollToTop({
-                      duration: 100, // Durasi animasi dalam milidetik
-                      smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                      duration: 100,
+                      smooth: "easeInOutQuart",
                     });
                   }}
                   to={"/adminDestinasi"}
@@ -177,8 +179,8 @@ const Navbar = ({ user }) => {
                 <Link
                   onClick={() => {
                     scroll.scrollToTop({
-                      duration: 100, // Durasi animasi dalam milidetik
-                      smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                      duration: 100,
+                      smooth: "easeInOutQuart",
                     });
                   }}
                   to={"/destinasi-approval"}
@@ -197,8 +199,8 @@ const Navbar = ({ user }) => {
             <Link
               onClick={() => {
                 scroll.scrollToTop({
-                  duration: 100, // Durasi animasi dalam milidetik
-                  smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                  duration: 100,
+                  smooth: "easeInOutQuart",
                 });
               }}
               to="/editProfile"
@@ -214,8 +216,8 @@ const Navbar = ({ user }) => {
           <Link
             onClick={() => {
               scroll.scrollToTop({
-                duration: 100, // Durasi animasi dalam milidetik
-                smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+                duration: 100,
+                smooth: "easeInOutQuart",
               });
             }}
             to="/login"
