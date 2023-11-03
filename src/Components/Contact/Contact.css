@@ -42,11 +42,11 @@
     max-width: 60%;
     height: auto;
     border-radius: 10px;
-    animation: rotate 7s linear infinite;
+    /* animation: rotate 7s linear infinite; */
     /* Animasi putaran tak hingga pada gambar */
 }
 
-@keyframes rotate {
+/* @keyframes rotate {
     from {
         transform: rotate(0deg);
     }
@@ -54,7 +54,7 @@
     to {
         transform: rotate(360deg);
     }
-}
+} */
 
 /* * {
     padding: 0;

@@ -44,11 +44,13 @@ const Contact = () => {
               </p>
             </div>
             <div className="contact-map">
-              <img
-                src={GoogleMap}
-                alt="Lokasi Kantor Desa Manud Jaya"
-                className="rotating-image"
-              />
+              <a href="https://maps.app.goo.gl/8g3YFaict355fWHz6">
+                <img
+                  src={GoogleMap}
+                  alt="Lokasi Kantor Desa Manud Jaya"
+                  className="rotating-image"
+                />
+              </a>
             </div>
           </div>
         </section>
