@@ -265,12 +265,61 @@ const Contact = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            height: "400px",
-            /* height: 100vh, */
+            height: "300px",
             overflow: "hidden",
             borderTop: "4px solid grey",
             marginLeft: "100px",
             marginRight: "100px",
+          }}
+        >
+          <div
+            style={{
+              background: "#f2f2f2",
+              padding: "20px",
+              borderRadius: "10px",
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              width: "90%",
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div>
+              <img
+                src={man} // Ganti dengan URL gambar Kepala Desa jika diperlukan
+                alt="Foto Kepala Desa"
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+            <div style={{ marginLeft: "20px", textAlign: "left" }}>
+              <h2>Profil Kepala Desa</h2>
+              <p>
+                <strong>Nama:</strong> Hj. Dr. Achmad Firmansyah Sulaeman S.T.
+              </p>
+              <p>
+                <strong>NIP:</strong> 2206137391
+              </p>
+              <p>
+                <strong>Jabatan:</strong> KEPALA DESA
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "400px",
+            /* height: 100vh, */
+            overflow: "hidden",
           }}
         >
           <div
