@@ -260,6 +260,59 @@ const Contact = () => {
             </ol>
           </div>
         </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "400px",
+            /* height: 100vh, */
+            overflow: "hidden",
+            borderTop: "4px solid grey",
+            marginLeft: "100px",
+            marginRight: "100px",
+          }}
+        >
+          <div
+            style={{
+              background: "#f2f2f2",
+              padding: "20px",
+              borderRadius: "10px",
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              width: "80%",
+              textAlign: "center",
+            }}
+          >
+            <h2 style={{ marginBottom: "20px" }}>
+              Visi dan Misi Desa Manud Jaya
+            </h2>
+            <p>
+              <strong>Visi:</strong> Mewujudkan Desa Manud Jaya yang maju,
+              sejahtera, dan berkelanjutan.
+            </p>
+            <p>
+              <strong>Misi:</strong>
+              <ul style={{ listStyleType: "none" }}>
+                <li>
+                  1. Mengembangkan potensi sumber daya alam secara
+                  berkelanjutan.
+                </li>
+                <li>
+                  2. Meningkatkan kualitas pendidikan dan kesejahteraan
+                  masyarakat.
+                </li>
+                <li>
+                  3. Memajukan ekonomi lokal dan mendukung usaha kecil dan
+                  menengah.
+                </li>
+                <li>
+                  4. Meningkatkan pelayanan publik dan partisipasi masyarakat
+                  dalam pengambilan keputusan.
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
         <ProgramDesa />
         <KebijakanDesa />
       </div>
