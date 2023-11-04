@@ -11,59 +11,59 @@ const Pengaduan = ({ user }) => {
   const [nomorTelepon, setNomorTelepon] = useState("");
   const [tanggalKejadian, setTanggalKejadian] = useState("");
   const [lokasiKejadian, setLokasiKejadian] = useState("");
-  const [prioritas, setPrioritas] = useState("Sedang");
+  // const [prioritas, setPrioritas] = useState("Sedang");
   const [kategori, setKategori] = useState("Infrastruktur");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (user.role === "" || user.role !== "user") {
+    // if (user.role === "" || user.role !== "user") {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Silahkan Login terlebih dahulu",
+    //     text: "Login untuk pengajuan pengaduan",
+    //   });
+    // } else {
+    if (nama && alamat && pengaduan) {
+      // Membuat pop-up konfirmasi menggunakan SweetAlert2
       Swal.fire({
-        icon: "error",
-        title: "Silahkan Login terlebih dahulu",
-        text: "Login untuk pengajuan pengaduan",
+        title: "Kirim Pengaduan?",
+        text: "Anda yakin ingin mengirimkan pengaduan ini?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "green",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ya, Kirim",
+        cancelButtonText: "Batal",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // console.log("Data Pengaduan:", {
+          // string:  nama,
+          // string:  alamat,
+          // string:  pengaduan,
+          // string:  nomorTelepon,
+          // string:  tanggalKejadian,
+          // string:  lokasiKejadian,
+          // string:  prioritas,
+          // string:  kategori,
+          // string:  user.email
+          // });
+          Swal.fire({
+            icon: "success",
+            title: "Pengaduan berhasil dikirim",
+            text: "Terima kasih atas kontribusi Anda!",
+          });
+          setNama("");
+          setAlamat("");
+          setPengaduan("");
+          setNomorTelepon("");
+          setTanggalKejadian("");
+          setLokasiKejadian("");
+          // setPrioritas("Sedang");
+          setKategori("Infrastruktur");
+        }
       });
-    } else {
-      if (nama && alamat && pengaduan) {
-        // Membuat pop-up konfirmasi menggunakan SweetAlert2
-        Swal.fire({
-          title: "Kirim Pengaduan?",
-          text: "Anda yakin ingin mengirimkan pengaduan ini?",
-          icon: "question",
-          showCancelButton: true,
-          confirmButtonColor: "green",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Ya, Kirim",
-          cancelButtonText: "Batal",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            // console.log("Data Pengaduan:", {
-            // string:  nama,
-            // string:  alamat,
-            // string:  pengaduan,
-            // string:  nomorTelepon,
-            // string:  tanggalKejadian,
-            // string:  lokasiKejadian,
-            // string:  prioritas,
-            // string:  kategori,
-            // string:  user.email
-            // });
-            Swal.fire({
-              icon: "success",
-              title: "Pengaduan berhasil dikirim",
-              text: "Terima kasih atas kontribusi Anda!",
-            });
-            setNama("");
-            setAlamat("");
-            setPengaduan("");
-            setNomorTelepon("");
-            setTanggalKejadian("");
-            setLokasiKejadian("");
-            setPrioritas("Sedang");
-            setKategori("Infrastruktur");
-          }
-        });
-      }
     }
+    // }
   };
 
   return (
@@ -108,20 +108,21 @@ const Pengaduan = ({ user }) => {
           onChange={(e) => setPengaduan(e.target.value)}
           required
         ></textarea>
-        <label>Prioritas Pengaduan</label>
-        <select
+        {/* <label>Prioritas Pengaduan</label> */}
+        {/* <select
           value={prioritas}
           onChange={(e) => setPrioritas(e.target.value)}
         >
           <option value="Rendah">Rendah</option>
           <option value="Sedang">Sedang</option>
           <option value="Tinggi">Tinggi</option>
-        </select>
+        </select> */}
         <label>Kategori Pengaduan</label>
         <select value={kategori} onChange={(e) => setKategori(e.target.value)}>
           <option value="Infrastruktur">Infrastruktur</option>
           <option value="Lingkungan">Lingkungan</option>
           <option value="Sosial">Sosial</option>
+          <option value="Others">Others</option>
         </select>
         <button type="submit">Kirim Pengaduan</button>
       </form>
