@@ -11,7 +11,7 @@ const Pengaduan = ({ user }) => {
   const [nomorTelepon, setNomorTelepon] = useState("");
   const [tanggalKejadian, setTanggalKejadian] = useState("");
   const [lokasiKejadian, setLokasiKejadian] = useState("");
-  // const [prioritas, setPrioritas] = useState("Sedang");
+  const [prioritas, setPrioritas] = useState("Sedang");
   const [kategori, setKategori] = useState("Infrastruktur");
 
   const handleSubmit = (e) => {
@@ -108,15 +108,15 @@ const Pengaduan = ({ user }) => {
           onChange={(e) => setPengaduan(e.target.value)}
           required
         ></textarea>
-        {/* <label>Prioritas Pengaduan</label> */}
-        {/* <select
+        <label>Prioritas Pengaduan</label>
+        <select
           value={prioritas}
           onChange={(e) => setPrioritas(e.target.value)}
         >
           <option value="Rendah">Rendah</option>
           <option value="Sedang">Sedang</option>
           <option value="Tinggi">Tinggi</option>
-        </select> */}
+        </select>
         <label>Kategori Pengaduan</label>
         <select value={kategori} onChange={(e) => setKategori(e.target.value)}>
           <option value="Infrastruktur">Infrastruktur</option>
