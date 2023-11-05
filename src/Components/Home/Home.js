@@ -265,7 +265,7 @@ const Home = () => {
                         textAlign: "right",
                         marginRight: "20px",
                         fontSize: "11px",
-                        marginLeft: "400px",
+                        marginLeft: "370px",
                       }}
                     >
                       Desa Manud Jaya, 5 November 2023
