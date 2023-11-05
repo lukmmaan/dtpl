@@ -13,6 +13,8 @@ import {
   bos5,
   bos6,
   desaaja,
+  like,
+  unlike,
 } from "../../Assets/Image";
 
 const Home = () => {
@@ -90,10 +92,6 @@ const Home = () => {
     },
   ];
 
-  // Contoh akses objek di dalam array
-  console.log(acaraDesa[0].judul); // Output: "Pengembangan desa wisata melalui pemanfaatan sumber daya alam dan budaya lokal"
-  console.log(acaraDesa[0].detail); // Output: "Rencana pengembangan desa wisata akan memanfaatkan potensi alam dan budaya lokal untuk meningkatkan pariwisata di desa. Acara ini akan membahas langkah-langkah konkret yang akan diambil untuk mencapai tujuan ini."
-
   const determineClasses = (indexes, cardIndex) => {
     if (indexes.currentIndex === cardIndex) {
       return "active";
@@ -114,8 +112,6 @@ const Home = () => {
     const [hovered, setHovered] = useState(false);
 
     const handleCardTransition = useCallback(() => {
-      // If we've reached the end, start again from the first card,
-      // but carry previous value over
       if (indexes.currentIndex >= cardItems.length - 1) {
         setIndexes({
           previousIndex: cardItems.length - 1,
@@ -226,16 +222,55 @@ const Home = () => {
                       {acaraDesa[index].detail}
                     </p>
                   </div>
-                  <p
+                  <div
                     style={{
-                      color: "grey",
-                      textAlign: "right",
-                      marginRight: "20px",
-                      fontSize: "11px",
+                      display: "flex",
+                      flexDirection: "row",
+                      width: "100%",
+                      justifyContent: "flex-end",
                     }}
                   >
-                    Desa Manud Jaya, 5 November 2023
-                  </p>
+                    <div style={{ display: "flex", flexDirection: "row" }}>
+                      <img
+                        src={like}
+                        style={{
+                          height: "20px",
+                          width: "20px",
+                          borderRadius: "40",
+                          marginLeft: "20px",
+                          marginRight: "10px",
+                          // padding: "20px",
+                        }}
+                      />
+                      <p>0</p>
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "row" }}>
+                      <img
+                        src={unlike}
+                        style={{
+                          height: "20px",
+                          width: "20px",
+                          borderRadius: "40",
+                          marginLeft: "20px",
+                          // padding: "20px",
+                          marginTop: "6px",
+                          marginRight: "10px",
+                        }}
+                      />
+                      <p>0</p>
+                    </div>
+                    <p
+                      style={{
+                        color: "grey",
+                        textAlign: "right",
+                        marginRight: "20px",
+                        fontSize: "11px",
+                        marginLeft: "400px",
+                      }}
+                    >
+                      Desa Manud Jaya, 5 November 2023
+                    </p>
+                  </div>
                 </div>
               </div>
             </li>

@@ -9,6 +9,7 @@ import { API_URL } from "../../Constants/Api";
 const Pengaduan = ({ user }) => {
   const [nama, setNama] = useState("");
   const [alamat, setAlamat] = useState("");
+  const [email, setEmail] = useState("");
   const [pengaduan, setPengaduan] = useState("");
   const [nomorTelepon, setNomorTelepon] = useState("");
   const [tanggalKejadian, setTanggalKejadian] = useState("");
@@ -27,9 +28,9 @@ const Pengaduan = ({ user }) => {
       lokasiKejadian,
       prioritas,
       kategori,
-      emai: user.email,
+      email: user.email || email,
     };
-
+    console.log(formData);
     try {
       await Axios.post(`${API_URL}/pengaduan`, formData);
 
@@ -39,10 +40,11 @@ const Pengaduan = ({ user }) => {
         text: "Terima kasih atas kontribusi Anda!",
       });
     } catch (error) {
+      console.log(error);
       Swal.fire({
-        icon: "success",
-        title: "Pengaduan berhasil diselesaikan",
-        text: "Terima kasih atas kontribusi Anda!",
+        icon: "error",
+        title: "Gagal Membuat pengaduan",
+        text: "Silahkan coba lagi!",
       });
     } finally {
       setNama("");
@@ -52,6 +54,7 @@ const Pengaduan = ({ user }) => {
       setTanggalKejadian("");
       setLokasiKejadian("");
       setKategori("Infrastruktur");
+      setEmail("");
     }
   };
 
@@ -73,6 +76,15 @@ const Pengaduan = ({ user }) => {
           onChange={(e) => setAlamat(e.target.value)}
           required
         />
+        {user.email === "" && (
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        )}
         <input
           type="text"
           placeholder="Nomor Telepon"

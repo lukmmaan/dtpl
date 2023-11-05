@@ -45,3 +45,5 @@ export const bos4 = require("./bos4.jpg");
 export const bos5 = require("./bos5.jpg");
 export const bos6 = require("./bos6.jpg");
 export const desaaja = require("./desaaja.jpg");
+export const like = require("./like.png");
+export const unlike = require("./unlike.png");
