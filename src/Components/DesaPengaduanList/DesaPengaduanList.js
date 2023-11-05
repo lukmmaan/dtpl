@@ -1,6 +1,9 @@
 import React, { Component, useEffect } from "react";
+import Axios from "axios";
+
 import "./DesaPengaduanList.css"; // Impor file CSS
 import Swal from "sweetalert2";
+import { API_URL } from "../../Constants/Api";
 
 class DesaPengaduanList extends Component {
   constructor(props) {
@@ -131,6 +134,24 @@ class DesaPengaduanList extends Component {
       ],
     };
   }
+
+  componentDidMount() {
+    this.fetchData(); 
+  }
+
+  fetchData = () => {
+    Axios.get(`${API_URL}/pengaduan`)
+      .then((response) => {
+        const pengaduanData = response.data;
+        
+        this.setState((prevState) => ({
+          pengaduanList: [...prevState.pengaduanList, ...pengaduanData],
+        }));
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   render() {
     return (

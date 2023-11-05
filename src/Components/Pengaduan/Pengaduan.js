@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import Axios from "axios";
 import { connect } from "react-redux";
 
 import "./Pengaduan.css";
+import { API_URL } from "../../Constants/Api";
 
 const Pengaduan = ({ user }) => {
   const [nama, setNama] = useState("");
@@ -14,56 +16,43 @@ const Pengaduan = ({ user }) => {
   const [prioritas, setPrioritas] = useState("Sedang");
   const [kategori, setKategori] = useState("Infrastruktur");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (user.role === "" || user.role !== "user") {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Silahkan Login terlebih dahulu",
-    //     text: "Login untuk pengajuan pengaduan",
-    //   });
-    // } else {
-    if (nama && alamat && pengaduan) {
-      // Membuat pop-up konfirmasi menggunakan SweetAlert2
+    const formData = {
+      nama,
+      alamat,
+      pengaduan,
+      nomorTelepon,
+      tanggalKejadian,
+      lokasiKejadian,
+      prioritas,
+      kategori,
+      emai: user.email,
+    };
+
+    try {
+      await Axios.post(`${API_URL}/pengaduan`, formData);
+
       Swal.fire({
-        title: "Kirim Pengaduan?",
-        text: "Anda yakin ingin mengirimkan pengaduan ini?",
-        icon: "question",
-        showCancelButton: true,
-        confirmButtonColor: "green",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Ya, Kirim",
-        cancelButtonText: "Batal",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // console.log("Data Pengaduan:", {
-          // string:  nama,
-          // string:  alamat,
-          // string:  pengaduan,
-          // string:  nomorTelepon,
-          // string:  tanggalKejadian,
-          // string:  lokasiKejadian,
-          // string:  prioritas,
-          // string:  kategori,
-          // string:  user.email
-          // });
-          Swal.fire({
-            icon: "success",
-            title: "Pengaduan berhasil dikirim",
-            text: "Terima kasih atas kontribusi Anda!",
-          });
-          setNama("");
-          setAlamat("");
-          setPengaduan("");
-          setNomorTelepon("");
-          setTanggalKejadian("");
-          setLokasiKejadian("");
-          // setPrioritas("Sedang");
-          setKategori("Infrastruktur");
-        }
+        icon: "success",
+        title: "Pengaduan berhasil dibuat",
+        text: "Terima kasih atas kontribusi Anda!",
       });
+    } catch (error) {
+      Swal.fire({
+        icon: "success",
+        title: "Pengaduan berhasil diselesaikan",
+        text: "Terima kasih atas kontribusi Anda!",
+      });
+    } finally {
+      setNama("");
+      setAlamat("");
+      setPengaduan("");
+      setNomorTelepon("");
+      setTanggalKejadian("");
+      setLokasiKejadian("");
+      setKategori("Infrastruktur");
     }
-    // }
   };
 
   return (
