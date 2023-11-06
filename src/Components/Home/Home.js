@@ -1,17 +1,11 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  Mousewheel,
-  Keyboard,
-  Autoplay,
-} from "swiper/modules";
-
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/effect-cards";
+
+// import required modules
+import { EffectCards } from "swiper/modules";
 import Axios from "axios";
 
 import "./Home.css";
@@ -148,21 +142,10 @@ const Home = () => {
     return (
       <>
         <Swiper
-          cssMode={true}
-          navigation={true}
-          // pagination={true}
-          mousewheel={true}
-          // autoplay={{
-          //   delay: 4000,
-          //   disableOnInteraction: false,
-          // }}
-          keyboard={true}
-          modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+          effect={"cards"}
+          grabCursor={true}
+          modules={[EffectCards]}
           className="mySwiper"
-          style={{
-            borderRadius: "20px",
-            boxShadow: "0 10px 5px grey",
-          }}
         >
           {acaraDesa &&
             acaraDesa.map((card, index) => (
@@ -335,7 +318,7 @@ const Home = () => {
           }}
         >
           <div style={{ marginBottom: "30px" }}>
-            <h4>Desa Bahagia</h4>
+            {/* <h4>Desa Bahagia</h4> */}
           </div>
           <CardSwiper />
         </div>
