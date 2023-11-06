@@ -1,6 +1,18 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { animateScroll as scroll } from "react-scroll";
+import React, { useState, useCallback, useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+  Autoplay,
+} from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Axios from "axios";
 
 import "./Home.css";
 import DestinasiCarousel from "./Carousel/Carousel";
@@ -16,6 +28,7 @@ import {
   like,
   unlike,
 } from "../../Assets/Image";
+import { API_URL } from "../../Constants/Api";
 
 const Home = () => {
   const cardItems = [
@@ -56,227 +69,234 @@ const Home = () => {
       copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
   ];
-  const acaraDesa = [
-    {
-      judul:
-        "Pengembangan desa wisata oleh Kepala Desa melalui pemanfaatan sumber daya alam dan budaya lokal",
-      detail:
-        "Rencana pengembangan desa wisata akan dipimpin oleh Kepala Desa dan memanfaatkan potensi alam dan budaya lokal untuk meningkatkan pariwisata di desa. Acara ini akan membahas langkah-langkah konkret yang akan diambil untuk mencapai tujuan ini.",
-    },
-    {
-      judul: "Program penghijauan dan reboisasi oleh Kepala Desa",
-      detail:
-        "Program penghijauan dan reboisasi adalah inisiatif penting yang akan dijalankan oleh Kepala Desa untuk menjaga lingkungan desa. Kami akan mempresentasikan rencana penanaman pohon dan langkah-langkah reboisasi yang akan dijalankan oleh kepala desa.",
-    },
-    {
-      judul:
-        "Pembentukan posyandu oleh Kepala Desa atau pos pelayanan terpadu untuk ibu dan anak",
-      detail:
-        "Pembentukan posyandu adalah upaya penting yang diprakarsai oleh Kepala Desa untuk meningkatkan kesehatan ibu dan anak di desa. Kami akan membahas rencana pembentukan posyandu dan layanan yang akan disediakan.",
-    },
-    {
-      judul:
-        "Pelatihan dan pendampingan untuk usaha pertanian, perikanan, atau kerajinan tangan oleh Kepala Desa",
-      detail:
-        "Pelatihan dan pendampingan akan diberikan kepada warga desa yang berminat mengembangkan usaha pertanian, perikanan, atau kerajinan tangan, dengan dukungan dari Kepala Desa. Ini adalah kesempatan untuk meningkatkan keterampilan dan potensi ekonomi desa.",
-    },
-    {
-      judul: "Pelatihan keterampilan kerja untuk pemuda desa oleh Kepala Desa",
-      detail:
-        "Pemuda desa merupakan aset berharga. Kami akan menyelenggarakan pelatihan keterampilan kerja yang akan dipandu oleh Kepala Desa dan membantu pemuda desa dalam mencari pekerjaan atau mengembangkan bisnis mereka sendiri.",
-    },
-    {
-      judul: "Pemberdayaan silitas air bersih dan sanitasi oleh Kepala Desa",
-      detail:
-        "Ketersediaan air bersih dan sanitasi adalah hak dasar setiap warga desa. Kepala Desa akan memaparkan upaya-upaya untuk meningkatkan akses sumber air bersih dan sanitasi di desa.",
-    },
-  ];
 
-  const determineClasses = (indexes, cardIndex) => {
-    if (indexes.currentIndex === cardIndex) {
-      return "active";
-    } else if (indexes.nextIndex === cardIndex) {
-      return "next";
-    } else if (indexes.previousIndex === cardIndex) {
-      return "prev";
-    }
-    return "inactive";
-  };
+  const CardSwiper = () => {
+    const [acaraDesa, setAcaraDesa] = useState([]);
+    const [likeDislike, setLikeDislike] = useState([]);
+    const [isDataFetched, setIsDataFetched] = useState(false);
 
-  const CardCarousel = () => {
-    const [indexes, setIndexes] = useState({
-      previousIndex: 0,
-      currentIndex: 0,
-      nextIndex: 1,
-    });
-    const [hovered, setHovered] = useState(false);
+    const getDataKampanye = () => {
+      Axios.get(`${API_URL}/kampanye`)
+        .then((response) => {
+          const data = response.data;
+          let liked = [];
+          let disLiked = [];
 
-    const handleCardTransition = useCallback(() => {
-      if (indexes.currentIndex >= cardItems.length - 1) {
-        setIndexes({
-          previousIndex: cardItems.length - 1,
-          currentIndex: 0,
-          nextIndex: 1,
+          data.map((val, idx) => {
+            liked.push(val.totalLike);
+            disLiked.push(val.totalDislike);
+            if (idx === data.length - 1) {
+              setLikeDislike({ likedData: liked, disLikedData: disLiked });
+            }
+          });
+          console.log(acaraDesa, data);
+          setAcaraDesa(data);
+        })
+        .catch((error) => {
+          console.log(error);
         });
-      } else {
-        setIndexes((prevState) => ({
-          previousIndex: prevState.currentIndex,
-          currentIndex: prevState.currentIndex + 1,
-          nextIndex:
-            prevState.currentIndex + 2 === cardItems.length
-              ? 0
-              : prevState.currentIndex + 2,
-        }));
-      }
-    }, [indexes.currentIndex]);
+    };
+
+    const updateDataLike = (index) => {
+      Axios.get(`${API_URL}/kampanye`)
+        .then((response) => {
+          const data = response.data;
+          let liked = [];
+          let disLiked = [];
+
+          data.map((val, idx) => {
+            liked.push(val.totalLike);
+            disLiked.push(val.totalDislike);
+            if (idx === data.length - 1) {
+              setLikeDislike({ likedData: liked, disLikedData: disLiked });
+            }
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
 
     useEffect(() => {
-      const transitionInterval = setInterval(() => {
-        if (!hovered) {
-          handleCardTransition();
-        }
-      }, 2000);
+      if (!isDataFetched) {
+        getDataKampanye();
+        setIsDataFetched(true);
+        console.log("masuk");
+      }
+    }, [isDataFetched]);
 
-      return () => clearInterval(transitionInterval);
-    }, [handleCardTransition, hovered]);
+    const likeKampanye = (kampanyeId, index) => {
+      Axios.patch(`${API_URL}/kampanye/${kampanyeId}/like`)
+        .then((response) => {
+          updateDataLike(index);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    };
+
+    const unLikeKampanye = (kampanyeId, index) => {
+      Axios.patch(`${API_URL}/kampanye/${kampanyeId}/dislike`)
+        .then((response) => {
+          updateDataLike(index);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    };
 
     return (
-      <div className="container">
-        <ul
+      <>
+        <Swiper
+          cssMode={true}
+          navigation={true}
+          // pagination={true}
+          mousewheel={true}
+          // autoplay={{
+          //   delay: 4000,
+          //   disableOnInteraction: false,
+          // }}
+          keyboard={true}
+          modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+          className="mySwiper"
           style={{
-            listStylee: "none",
-            padding: 0,
-            display: "flex",
-            flexDirection: "column",
-            height: "200px",
-            // width: "1500px",
-            margin: "100px auto",
-            alignItems: "center",
-            position: "relative",
+            borderRadius: "20px",
+            boxShadow: "0 10px 5px grey",
           }}
         >
-          {cardItems.map((card, index) => (
-            <li
-              key={card.id}
-              style={{ listStyleType: "none", borderRadius: "40" }}
-              className={`cardIni ${determineClasses(indexes, index)}`}
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "40",
-                  // alignItems: "center",
-                }}
-              >
-                <div
-                  style={{
-                    flex: 2,
-                    borderRadius: "40",
-                    // alignItems: "center"
-                  }}
-                >
-                  <img
-                    src={card.image}
-                    style={{
-                      height: "100%",
-                      width: "100%",
-                      borderRadius: "40",
-                      // padding: "20px",
-                    }}
-                  />
-                </div>
-                <div style={{ flex: 3 }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      padding: "20px",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      height: "90%",
-                    }}
-                  >
-                    <h1
-                      style={{
-                        color: "black",
-                        textAlign: "justify",
-                        marginBottom: "50px",
-                        fontSize: "40px",
-                      }}
-                    >
-                      {acaraDesa[index].judul}
-                    </h1>
-                    <p
-                      style={{
-                        color: "grey",
-                        textAlign: "justify",
-                        fontSize: "17px",
-                        // marginBottom: "90px",
-                      }}
-                    >
-                      {acaraDesa[index].detail}
-                    </p>
-                  </div>
+          {acaraDesa &&
+            acaraDesa.map((card, index) => (
+              <>
+                <SwiperSlide>
                   <div
                     style={{
                       display: "flex",
                       flexDirection: "row",
                       width: "100%",
-                      justifyContent: "flex-end",
+                      height: "100%",
+                      borderRadius: "40",
+                      // alignItems: "center",
                     }}
                   >
-                    <div style={{ display: "flex", flexDirection: "row" }}>
-                      <img
-                        src={like}
-                        style={{
-                          height: "20px",
-                          width: "20px",
-                          borderRadius: "40",
-                          marginLeft: "20px",
-                          marginRight: "10px",
-                          // padding: "20px",
-                        }}
-                      />
-                      <p>0</p>
-                    </div>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
-                      <img
-                        src={unlike}
-                        style={{
-                          height: "20px",
-                          width: "20px",
-                          borderRadius: "40",
-                          marginLeft: "20px",
-                          // padding: "20px",
-                          marginTop: "6px",
-                          marginRight: "10px",
-                        }}
-                      />
-                      <p>0</p>
-                    </div>
-                    <p
+                    <div
                       style={{
-                        color: "grey",
-                        textAlign: "right",
-                        marginRight: "20px",
-                        fontSize: "11px",
-                        marginLeft: "370px",
+                        flex: 2,
                       }}
                     >
-                      Desa Manud Jaya, 5 November 2023
-                    </p>
+                      <img
+                        src={cardItems[index].image}
+                        style={{
+                          height: "100%",
+                          width: "100%",
+                        }}
+                      />
+                    </div>
+                    <div style={{ flex: 3 }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          padding: "20px",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          height: "90%",
+                          marginRight: "20px",
+                        }}
+                      >
+                        <h1
+                          style={{
+                            color: "black",
+                            textAlign: "justify",
+                            marginBottom: "50px",
+                            fontSize: "40px",
+                          }}
+                        >
+                          {acaraDesa[index].judul}
+                        </h1>
+                        <p
+                          style={{
+                            color: "grey",
+                            textAlign: "justify",
+                            fontSize: "17px",
+                            // marginBottom: "90px",
+                          }}
+                        >
+                          {acaraDesa[index].detail}
+                        </p>
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          width: "100%",
+                          justifyContent: "flex-end",
+                        }}
+                      >
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                          <img
+                            onClick={() => {
+                              likeKampanye(acaraDesa[index]._id, index);
+                            }}
+                            className="clickedImage"
+                            src={like}
+                            style={{
+                              height: "20px",
+                              width: "20px",
+                              borderRadius: "40",
+                              marginLeft: "20px",
+                              marginRight: "10px",
+                              // padding: "20px",
+                            }}
+                          />
+                          <p>{likeDislike.likedData[index]}</p>
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                          <img
+                            className="clickedImage"
+                            onClick={() => {
+                              unLikeKampanye(acaraDesa[index]._id, index);
+                            }}
+                            src={unlike}
+                            style={{
+                              height: "20px",
+                              width: "20px",
+                              borderRadius: "40",
+                              marginLeft: "20px",
+                              // padding: "20px",
+                              marginTop: "6px",
+                              marginRight: "10px",
+                            }}
+                          />
+                          <p>{likeDislike.disLikedData[index]}</p>
+                        </div>
+                        <p
+                          style={{
+                            color: "grey",
+                            textAlign: "right",
+                            marginRight: "20px",
+                            fontSize: "11px",
+                            marginLeft: "370px",
+                          }}
+                        >
+                          Desa Manud Jaya, 5 November 2023
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+                </SwiperSlide>
+              </>
+            ))}
+          {/* <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          <SwiperSlide>Slide 5</SwiperSlide>
+          <SwiperSlide>Slide 6</SwiperSlide>
+          <SwiperSlide>Slide 7</SwiperSlide>
+          <SwiperSlide>Slide 8</SwiperSlide>
+          <SwiperSlide>Slide 9</SwiperSlide> */}
+        </Swiper>
+      </>
     );
   };
 
@@ -304,8 +324,21 @@ const Home = () => {
           </div>
         </div>
       </section> */}
+      <section className="section-rumah">{/* <CardCarousel /> */}</section>
       <section className="section-rumah">
-        <CardCarousel />
+        <div
+          className="container"
+          style={{
+            height: "600px",
+            marginTop: "130px",
+            marginBottom: "140px",
+          }}
+        >
+          <div style={{ marginBottom: "30px" }}>
+            <h4>Desa Bahagia</h4>
+          </div>
+          <CardSwiper />
+        </div>
       </section>
       <section className="section-rumah">
         <DestinasiCarousel />
