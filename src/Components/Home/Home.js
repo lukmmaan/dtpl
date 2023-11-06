@@ -3,8 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { Link } from "react-router-dom";
-import { animateScroll as scroll } from "react-scroll";
 
 // import required modules
 import { EffectCards } from "swiper/modules";
@@ -287,28 +285,7 @@ const Home = () => {
 
   return (
     <div className="container-rumah">
-      <section className="section-rumah">{/* <CardCarousel /> */}</section>
-      <section
-        className="section-rumah"
-        style={{
-          backgroundColor: "#f0f0f0",
-        }}
-      >
-        <div
-          className="container"
-          style={{
-            height: "600px",
-            marginTop: "114px",
-            marginBottom: "140px",
-          }}
-        >
-          <div style={{ marginBottom: "30px" }}>
-            {/* <h4>Desa Bahagia</h4> */}
-          </div>
-          <CardSwiper />
-        </div>
-      </section>
-      <section className="section-rumah">
+      {/* <section className="section-rumah">
         <div className="home-container">
           <div className="hero-section">
             <h1 className="hero-title">Selamat datang di Desa Manud Jaya</h1>
@@ -328,6 +305,22 @@ const Home = () => {
               Pelajari Lebih Lanjut
             </Link>
           </div>
+        </div>
+      </section> */}
+      <section className="section-rumah">{/* <CardCarousel /> */}</section>
+      <section className="section-rumah">
+        <div
+          className="container"
+          style={{
+            height: "650px",
+            marginTop: "130px",
+            marginBottom: "140px",
+          }}
+        >
+          <div style={{ marginBottom: "30px" }}>
+            {/* <h4>Desa Bahagia</h4> */}
+          </div>
+          <CardSwiper />
         </div>
       </section>
       <section className="section-rumah">
