@@ -150,3 +150,12 @@
   height: 100%;
   object-fit: cover;
 }
+
+.fotoPeta:hover {
+  transform: scale(1.1);
+  ;
+}
+
+.fotoPeta {
+  transition: transform 0.3s ease-in-out;
+}

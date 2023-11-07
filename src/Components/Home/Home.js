@@ -20,6 +20,7 @@ import {
   bos6,
   desaaja,
   like,
+  peta,
   peta2,
   peta3,
   unlike,
@@ -315,10 +316,47 @@ const Home = () => {
           className="container"
           style={{
             height: "650px",
-            marginTop: "130px",
+            marginTop: "120px",
             marginBottom: "140px",
           }}
         >
+          <div style={{ display: "flex", marginBottom: "20px" }}>
+            <div
+              style={{
+                flex: "1",
+                borderTop: "4px solid grey",
+                // marginLeft: "150px",
+                // // marginRight: "1000px",
+                width: "100%",
+                height: "4px",
+                marginTop: "20px",
+                // paddingBottom: "80px",
+              }}
+            ></div>
+            <h2
+              style={{
+                // marginTop: "200px",
+                fontWeight: "bold",
+                alignItems: "center",
+                textAlign: "center",
+                flex: "2",
+              }}
+            >
+              Kesuksesan Desa Manud Jaya
+            </h2>
+            <div
+              style={{
+                flex: "1",
+                borderTop: "4px solid grey",
+                // marginLeft: "150px",
+                // // marginRight: "1000px",
+                width: "100%",
+                height: "4px",
+                marginTop: "20px",
+                // paddingBottom: "80px",
+              }}
+            ></div>
+          </div>
           <div style={{ marginBottom: "30px" }}>
             {/* <h4>Desa Bahagia</h4> */}
           </div>
@@ -355,6 +393,7 @@ const Home = () => {
               borderRadius: 40,
               boxShadow: "17px 14px 53px -10px rgba(0, 0, 0, 0.67)",
             }}
+            className="fotoPeta"
           />
         </div>
         <div
@@ -432,14 +471,14 @@ const Home = () => {
             bertanggung jawab untuk berbagai kegiatan dan layanan yang
             disediakan kepada penduduk setempat.
           </p>
-          <p>
+          <p style={{ marginTop: "30px" }}>
             Alamat: Jalan Desa Manud Jaya No. 123, Distrik Manud, Indonesia.
           </p>
           <p>
             Jam Operasional: Senin-Jumat, 08:00 - 16:00 WIT (Waktu Indonesia
             Timur).
           </p>
-          <p>
+          <p style={{ marginTop: "30px" }}>
             Di kantor Desa Manud Jaya, masyarakat dapat mengurus berbagai
             administrasi seperti pembuatan surat keterangan, pendaftaran
             penduduk, izin usaha, dan banyak lagi. Selain itu, kantor ini juga
@@ -456,13 +495,14 @@ const Home = () => {
           }}
         >
           <img
-            src={peta3}
+            src={peta}
             style={{
               height: "350px",
               width: "350px",
               borderRadius: 40,
               boxShadow: "17px 14px 53px -10px rgba(0, 0, 0, 0.67)",
             }}
+            className="fotoPeta"
           />
         </div>
       </div>
