@@ -47,3 +47,6 @@ export const bos6 = require("./bos6.jpg");
 export const desaaja = require("./desaaja.jpg");
 export const like = require("./like.png");
 export const unlike = require("./unlike.png");
+export const peta = require("./peta.jpeg");
+export const peta2 = require("./peta2.jpeg");
+export const peta3 = require("./peta3.jpeg");

@@ -20,6 +20,8 @@ import {
   bos6,
   desaaja,
   like,
+  peta2,
+  peta3,
   unlike,
 } from "../../Assets/Image";
 import { API_URL } from "../../Constants/Api";
@@ -331,10 +333,140 @@ const Home = () => {
           // marginRight: "1000px",
           width: "80%",
           height: "4px",
-          marginTop: "100px",
-          paddingBottom: "200px",
+          marginTop: "20px",
+          paddingBottom: "80px",
         }}
       ></div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          paddingLeft: "200px",
+          paddingRight: "200px",
+          marginBottom: "100px",
+        }}
+      >
+        <div style={{ flex: 2 }}>
+          <img
+            src={peta2}
+            style={{
+              height: "600px",
+              width: "600px",
+              borderRadius: 40,
+              boxShadow: "17px 14px 53px -10px rgba(0, 0, 0, 0.67)",
+            }}
+          />
+        </div>
+        <div
+          style={{
+            flex: 3,
+            paddingLeft: "60px",
+            paddingRight: "30px",
+            paddingTop: "10px",
+            textAlign: "justify",
+          }}
+        >
+          <h2 style={{ marginBottom: "20px", fontWeight: "bold" }}>
+            Sejarah Desa Manud Jaya
+          </h2>
+          <p>
+            Desa Manud Jaya adalah sebuah pemukiman yang terletak di Papua,
+            Indonesia, yang memiliki sejarah yang kaya dan beragam. Sejarah Desa
+            Manud Jaya mencerminkan perjalanan panjang dan perubahan yang telah
+            terjadi di wilayah ini. Pada awalnya, Desa Manud Jaya adalah bagian
+            dari budaya suku asli Papua yang kaya akan tradisi, adat istiadat,
+            dan kehidupan berkelompok yang sederhana. Namun, seiring berjalannya
+            waktu, wilayah ini mengalami transformasi signifikan dengan masuknya
+            pengaruh luar seperti perdagangan dan agama.
+          </p>
+
+          <p>
+            Selama masa penjajahan kolonial, Desa Manud Jaya juga mengalami
+            perubahan besar. Penduduk desa terlibat dalam perdagangan komoditas
+            lokal seperti hasil pertanian, tanaman, dan hewan ternak dengan
+            pedagang dari berbagai negara. Selain itu, agama Kristen yang
+            diperkenalkan oleh misionaris juga menjadi faktor penting dalam
+            mengubah kehidupan masyarakat setempat.
+          </p>
+
+          <p>
+            Setelah kemerdekaan Indonesia pada tahun 1945, Desa Manud Jaya
+            menjadi bagian dari negara yang baru terbentuk, dan perubahan sosial
+            dan politik terus berlanjut. Sejak itu, desa ini telah berkembang
+            secara ekonomi dan infrastruktur, dengan akses yang lebih baik ke
+            pendidikan dan layanan kesehatan. Meskipun tantangan dan konflik
+            masih ada, Desa Manud Jaya terus berusaha mempertahankan warisan
+            budaya dan tradisi suku Papua sambil mengintegrasikan pengaruh
+            global dalam kehidupan sehari-hari mereka.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style={{
+          borderTop: "4px solid grey",
+          marginLeft: "150px",
+          // marginRight: "1000px",
+          width: "80%",
+          height: "4px",
+          marginTop: "20px",
+          paddingBottom: "80px",
+        }}
+      ></div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          paddingLeft: "200px",
+          paddingRight: "200px",
+          marginBottom: "100px",
+        }}
+      >
+        <div style={{ flex: 3, textAlign: "justify" }}>
+          <h2 style={{ marginBottom: "20px", fontWeight: "bold" }}>
+            Kantor Desa Manud Jaya
+          </h2>
+          <p>
+            Kantor Desa Manud Jaya adalah pusat administratif dan pelayanan
+            masyarakat desa ini. Terletak di lokasi sentral, kantor ini
+            bertanggung jawab untuk berbagai kegiatan dan layanan yang
+            disediakan kepada penduduk setempat.
+          </p>
+          <p>
+            Alamat: Jalan Desa Manud Jaya No. 123, Distrik Manud, Indonesia.
+          </p>
+          <p>
+            Jam Operasional: Senin-Jumat, 08:00 - 16:00 WIT (Waktu Indonesia
+            Timur).
+          </p>
+          <p>
+            Di kantor Desa Manud Jaya, masyarakat dapat mengurus berbagai
+            administrasi seperti pembuatan surat keterangan, pendaftaran
+            penduduk, izin usaha, dan banyak lagi. Selain itu, kantor ini juga
+            menjadi tempat pertemuan untuk musyawarah desa dan berbagai acara
+            penting lainnya yang melibatkan komunitas setempat.
+          </p>
+        </div>
+        <div
+          style={{
+            flex: 2,
+            paddingLeft: "60px",
+            // paddingRight: "30px",
+            paddingTop: "10px",
+          }}
+        >
+          <img
+            src={peta3}
+            style={{
+              height: "350px",
+              width: "350px",
+              borderRadius: 40,
+              boxShadow: "17px 14px 53px -10px rgba(0, 0, 0, 0.67)",
+            }}
+          />
+        </div>
+      </div>
+
       {/* <section className="section-rumah">
         <DestinasiCarousel />
       </section> */}
