@@ -157,7 +157,7 @@ class DesaPengaduanList extends Component {
   finishPengajuan = (id) => {
     const apiUrl = `${API_URL}/pengaduan/${id}?status=selesai`;
 
-    Axios.put(apiUrl)
+    Axios.put(apiUrl, {}, Headers(this.props.user.token))
       .then((response) => {
         this.fetchData();
         Swal.fire({
