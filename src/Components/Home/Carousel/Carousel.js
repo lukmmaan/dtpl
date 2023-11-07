@@ -47,7 +47,7 @@ const DestinasiSlider = () => {
             }}
           />
         ))}
-        <div className="info-box">
+        <div className="info-box" style={{ textAlign: "justify" }}>
           <strong>
             <h1 style={{ marginBottom: "20px" }}>Wisata Manud Jaya</h1>
           </strong>

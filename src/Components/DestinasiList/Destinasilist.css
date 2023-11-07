@@ -6,16 +6,16 @@
     /* margin: 0; */
     margin-top: 100px;
     padding: 0;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .destinasiList-header {
     background-color: #654321;
     color: #fff;
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
     padding: 20px;
-    border-radius: 10px 10px 0 0;
+    /* border-radius: 10px 10px 0 0; */
 }
 
 .destinasiList-container {

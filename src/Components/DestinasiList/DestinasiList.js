@@ -1,5 +1,7 @@
 // DestinasiList.js
 import React, { useState } from "react";
+
+import DestinasiCarousel from "../Home/Carousel/Carousel";
 import "./Destinasilist.css";
 import DestinasiData from "./DestinasiData";
 import { Wisata4, Wisata5 } from "../../Assets/Image/index";
@@ -32,12 +34,13 @@ const DestinasiList = () => {
   };
 
   return (
-    <div id="top">
+    <div id="top" style={{ marginTop: "100px" }}>
       <div className="destinasiList">
-        <header className="destinasiList-header">
+        {/* <header className="destinasiList-header">
           <h2>Destinasi Wisata di Desa Manud Jaya</h2>
-        </header>
-        <div className="destinasiList-container">
+        </header> */}
+        <DestinasiCarousel />
+        {/* <div className="destinasiList-container">
           {DestinasiData.slice(
             (currentPage - 1) * itemsPerPage,
             currentPage * itemsPerPage
@@ -79,7 +82,7 @@ const DestinasiList = () => {
           >
             Selanjutnya
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

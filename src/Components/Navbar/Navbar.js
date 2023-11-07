@@ -118,6 +118,20 @@ const Navbar = ({ user }) => {
             About Us
           </Link>
         </li>
+        <li className="nav-item">
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100,
+                smooth: "easeInOutQuart",
+              });
+            }}
+            to="/destinasi-list"
+            className="nav-link"
+          >
+            Destinasi
+          </Link>
+        </li>
         <li className="nav-item dropdown">
           <div className="nav-link" onClick={toggleDropdown}>
             Others

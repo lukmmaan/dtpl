@@ -323,9 +323,21 @@ const Home = () => {
           <CardSwiper />
         </div>
       </section>
-      <section className="section-rumah">
+
+      <div
+        style={{
+          borderTop: "4px solid grey",
+          marginLeft: "150px",
+          // marginRight: "1000px",
+          width: "80%",
+          height: "4px",
+          marginTop: "100px",
+          paddingBottom: "200px",
+        }}
+      ></div>
+      {/* <section className="section-rumah">
         <DestinasiCarousel />
-      </section>
+      </section> */}
 
       {/* <section className="section-rumah">
         <BeritaScreen />
