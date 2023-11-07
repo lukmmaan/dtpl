@@ -345,7 +345,7 @@ const Home = () => {
                 flex: "2",
               }}
             >
-              Kesuksesan Desa Manud Jaya
+              Program Kepala Desa Manud Jaya
             </h2>
             <div
               style={{
