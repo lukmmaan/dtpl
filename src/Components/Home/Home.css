@@ -159,3 +159,8 @@
 .fotoPeta {
   transition: transform 0.3s ease-in-out;
 }
+
+.fontNext:hover {
+  color: #4d3319;
+  cursor: pointer;
+}

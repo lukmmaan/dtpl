@@ -1,5 +1,8 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -505,6 +508,28 @@ const Home = () => {
             className="fotoPeta"
           />
         </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "150px",
+          color: "grey",
+        }}
+      >
+        <Link
+          onClick={() => {
+            scroll.scrollToTop({
+              duration: 100, // Durasi animasi dalam milidetik
+              smooth: "easeInOutQuart", // Efek easing (percepatan/perlambatan)
+            });
+          }}
+          className="nav-link"
+          to="/contact"
+        >
+          <h2 >Selengkapnya</h2>
+        </Link>
       </div>
 
       {/* <section className="section-rumah">
