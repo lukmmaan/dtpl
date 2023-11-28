@@ -56,3 +56,5 @@ export const shopping = require("./shopping.png");
 export const travel = require("./travel.png");
 export const budget = require("./budget.png");
 export const programing = require("./programing.png");
+export const complaint = require("./complaint.png");
+export const enjoy = require("./enjoy.png");

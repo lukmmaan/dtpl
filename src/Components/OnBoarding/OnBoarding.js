@@ -11,14 +11,13 @@ import { Pagination } from "swiper/modules";
 import "./OnBoarding.css";
 import {
   login,
-  bos4,
-  bos5,
-  bos6,
   writing,
   shopping,
   travel,
   budget,
   programing,
+  complaint,
+  enjoy,
 } from "../../Assets/Image";
 
 const OnBoarding = () => {
@@ -58,6 +57,18 @@ const OnBoarding = () => {
       title: "Program Desa",
       image: programing,
       copy: "Bergabunglah dalam mengembangkan Desa Manud Jaya melalui program-program inovatif. Sumbangkan ide dan keterampilan Anda untuk memajukan komunitas, karena setiap kontribusi memiliki dampak besar!",
+    },
+    {
+      id: 7,
+      title: "Pengaduan Desa",
+      image: complaint,
+      copy: "Beri suara terhadap perubahan! Ajukan pengaduan kamu terhadap berbagai isu dan permasalahan di Desa Manud Jaya. Bersama-sama kita bisa membuat perubahan positif dan meningkatkan kualitas hidup komunitas kita.",
+    },
+    {
+      id: 8,
+      title: "Siap Menjelajahi Website Ini?",
+      image: enjoy,
+      copy: "Selamat! Kamu sekarang siap menjelajahi segala fitur menarik yang ada di dalam website ini. Temukan beragam layanan dan informasi yang bermanfaat untuk memudahkan interaksi dan keterlibatanmu dalam Desa Manud Jaya.",
     },
   ];
 
