@@ -206,6 +206,20 @@ const Navbar = ({ user }) => {
             )}
           </div>
         </li>
+        <li className="nav-item">
+          <Link
+            onClick={() => {
+              scroll.scrollToTop({
+                duration: 100,
+                smooth: "easeInOutQuart",
+              });
+            }}
+            to="/on-boarding"
+            className="nav-link"
+          >
+            Tutorial
+          </Link>
+        </li>
       </ul>
       <div className="login-section">
         {user && user.fullName ? (

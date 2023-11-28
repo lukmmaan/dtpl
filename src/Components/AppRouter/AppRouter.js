@@ -30,6 +30,7 @@ import AdminDestinasi from "../AdminDestinasi/AdminDestinasi";
 import DestinasiTambah from "../DestinasiTambah/DestinasiTambah";
 import AdminDestinasiDetail from "../AdminDestinasiDetail/AdminDestinasiDetail";
 import ApprovalDestinasi from "../ApprovalDestinasi/ApprovalDestinasi";
+import OnBoarding from "../OnBoarding/OnBoarding";
 
 const AppRouter = ({ user }) => {
   return (
@@ -40,6 +41,14 @@ const AppRouter = ({ user }) => {
           element={
             <Layout>
               <BlankPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/on-boarding"
+          element={
+            <Layout>
+              <OnBoarding />
             </Layout>
           }
         />

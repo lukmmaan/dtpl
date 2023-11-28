@@ -366,7 +366,6 @@ const Home = () => {
           <CardSwiper />
         </div>
       </section>
-
       <div
         style={{
           borderTop: "4px solid grey",
@@ -405,6 +404,8 @@ const Home = () => {
             paddingLeft: "60px",
             paddingRight: "30px",
             paddingTop: "10px",
+            height: "500px",
+            width: "800px",
             textAlign: "justify",
           }}
         >
@@ -464,7 +465,14 @@ const Home = () => {
           marginBottom: "100px",
         }}
       >
-        <div style={{ flex: 3, textAlign: "justify" }}>
+        <div
+          style={{
+            flex: 3,
+            textAlign: "justify",
+            height: "400px",
+            width: "800px",
+          }}
+        >
           <h2 style={{ marginBottom: "20px", fontWeight: "bold" }}>
             Kantor Desa Manud Jaya
           </h2>
@@ -526,9 +534,9 @@ const Home = () => {
             });
           }}
           className="nav-link"
-          to="/contact"
+          to="/on-boarding"
         >
-          <h2 >Selengkapnya</h2>
+          <h2>Selengkapnya</h2>
         </Link>
       </div>
 
